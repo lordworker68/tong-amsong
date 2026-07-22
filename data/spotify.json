@@ -1,0 +1,86 @@
+{
+ "updated": "2026-07-21T22:41:28+00:00",
+ "show": {
+  "title": "성경읽는 희석이",
+  "desc": "매일 성경 본문을 소리 내어 읽어주는 통암송 팟캐스트입니다.",
+  "show_href": "https://open.spotify.com/show/0BNrpFEwm3BVXTv8EAL4Og"
+ },
+ "books": [
+  {
+   "name": "아가서",
+   "episodes": [
+    {
+     "title": "성경읽는 희석이 | 아가서 1장",
+     "date": "2026년 7월 15일",
+     "time": "2:29",
+     "href": "https://podcasters.spotify.com/pod/show/meslapbooks/episodes/1-e3lomij",
+     "audio": "https://anchor.fm/s/103728a7c/podcast/play/122492947/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-6-7%2F427499246-44100-2-7df9abe21dfa4.m4a"
+    },
+    {
+     "title": "성경읽는 희석이 | 아가서 2장",
+     "date": "2026년 7월 16일",
+     "time": "3:00",
+     "href": "https://podcasters.spotify.com/pod/show/meslapbooks/episodes/2-e3lomjb",
+     "audio": "https://anchor.fm/s/103728a7c/podcast/play/122492971/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-6-7%2F427499271-44100-2-3f8e77cf04d5f.m4a"
+    }
+   ]
+  },
+  {
+   "name": "전도서",
+   "episodes": [
+    {
+     "title": "성경읽는 희석이 | 전도서 1장",
+     "date": "2026년 6월 22일",
+     "time": "3:01",
+     "href": "https://podcasters.spotify.com/pod/show/meslapbooks/episodes/1-e3l0j4v",
+     "audio": "https://anchor.fm/s/103728a7c/podcast/play/121703007/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-5-19%2F426442335-44100-2-64419906cdd82.m4a"
+    },
+    {
+     "title": "성경읽는 희석이 | 전도서 2장",
+     "date": "2026년 6월 23일",
+     "time": "5:50",
+     "href": "https://podcasters.spotify.com/pod/show/meslapbooks/episodes/2-e3l0j69",
+     "audio": "https://anchor.fm/s/103728a7c/podcast/play/121703049/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-5-19%2F426442386-44100-2-3a8dee98c47d5.m4a"
+    }
+   ]
+  },
+  {
+   "name": "시편",
+   "episodes": [
+    {
+     "title": "성경읽는 희석이 | 시편 1편",
+     "date": "2025년 11월 19일",
+     "time": "0:51",
+     "href": "https://podcasters.spotify.com/pod/show/meslapbooks/episodes/1-e3b60sv",
+     "audio": "https://anchor.fm/s/103728a7c/podcast/play/111395167/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-10-19%2F412756733-44100-2-1261c3f72d8b5.m4a"
+    },
+    {
+     "title": "성경읽는 희석이 | 시편 2편",
+     "date": "2025년 11월 20일",
+     "time": "1:35",
+     "href": "https://podcasters.spotify.com/pod/show/meslapbooks/episodes/2-e3b60uv",
+     "audio": "https://anchor.fm/s/103728a7c/podcast/play/111395231/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-10-19%2F412756806-44100-2-04c12cb2bedd.m4a"
+    }
+   ]
+  },
+  {
+   "name": "잠언",
+   "episodes": [
+    {
+     "title": "성경읽는 희석이 | 잠언 1장",
+     "date": "2025년 7월 30일",
+     "time": "3:42",
+     "href": "https://podcasters.spotify.com/pod/show/meslapbooks/episodes/1-e367i8c",
+     "audio": "https://anchor.fm/s/103728a7c/podcast/play/106202828/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-6-30%2F93a345f9-b153-50f8-0406-19870e5d7126.mp3"
+    },
+    {
+     "title": "성경읽는 희석이 | 잠언 2장",
+     "date": "2025년 8월 05일",
+     "time": "2:05",
+     "href": "https://podcasters.spotify.com/pod/show/meslapbooks/episodes/2-e36fg8h",
+     "audio": "https://anchor.fm/s/103728a7c/podcast/play/106462929/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-7-5%2F9fc477d5-0edd-ccf7-2191-ebce760dfada.mp3"
+    }
+   ]
+  }
+ ]
+}

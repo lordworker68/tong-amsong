@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>tongamsong 소셜 연동 — 인스타·페북·Threads</title>
+<style>
+:root{--bg:#0f1113;--card:#1a1e21;--mint:#7fe7c4;--ink:#e8eef0;--muted:#96a3a8;--line:rgba(255,255,255,.09);--bad:#ff8a80}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;padding:28px 16px 80px}
+.wrap{max-width:640px;margin:0 auto}
+h1{font-size:22px;margin:0 0 4px}
+p.lede{color:var(--muted);font-size:13.5px;margin:0 0 28px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:16px;margin:0 0 14px;color:var(--mint)}
+label{display:block;font-size:12.5px;color:var(--muted);margin:12px 0 4px}
+input,textarea{width:100%;background:#0a0c0d;border:1px solid var(--line);border-radius:7px;color:var(--ink);padding:9px 11px;font-size:13.5px;font-family:ui-monospace,monospace}
+textarea{min-height:60px;font-family:inherit}
+button{margin-top:14px;background:var(--mint);color:#08130f;border:0;border-radius:8px;padding:9px 16px;font-weight:700;cursor:pointer;font-size:13.5px}
+button.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.status{margin-top:14px;font-size:12.5px;white-space:pre-wrap;background:#0a0c0d;border-radius:7px;padding:10px 12px;color:var(--muted)}
+.status.ok{color:var(--mint)}
+.status.bad{color:var(--bad)}
+.checks{display:flex;gap:14px;margin-top:12px;font-size:13px}
+.checks label{display:flex;align-items:center;gap:5px;color:var(--ink);margin:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>tongamsong 소셜 연동</h1>
+  <p class="lede">인스타 릴스 · 페북 릴스 · Threads 자동배포 설정. 값은 이 화면에서 서버로 바로 저장되며 채팅/메일을 거치지 않습니다.</p>
+
+  <div class="card">
+    <h2>1. 현재 상태</h2>
+    <button class="sec" onclick="loadStatus()">새로고침</button>
+    <div id="status" class="status">불러오는 중...</div>
+  </div>
+
+  <div class="card">
+    <h2>2. Facebook / Instagram 연결</h2>
+    <label>App ID</label>
+    <input id="fb_app_id" placeholder="개발자 콘솔 → 앱 대시보드">
+    <label>App Secret</label>
+    <input id="fb_app_secret" placeholder="설정 → 기본 설정">
+    <label>단기 사용자 토큰 (그래프 API 탐색기에서 발급)</label>
+    <input id="fb_short_token" placeholder="EAAB...">
+    <label>페이지 ID (자동조회 실패 시에만 입력 — 가이드 11장 함정②③)</label>
+    <input id="fb_page_id_hint" placeholder="선택 사항">
+    <button onclick="connectMeta()">연결</button>
+  </div>
+
+  <div class="card">
+    <h2>3. Threads 연결</h2>
+    <label>App ID</label>
+    <input id="th_app_id">
+    <label>App Secret</label>
+    <input id="th_app_secret">
+    <label>사용자 토큰 생성기에서 발급한 장기 토큰</label>
+    <input id="th_token" placeholder="THQ...">
+    <button onclick="connectThreads()">연결</button>
+  </div>
+
+  <div class="card">
+    <h2>4. 테스트 발행</h2>
+    <label>영상 공개 HTTPS URL (1080×1920 권장)</label>
+    <input id="pub_video_url" placeholder="https://tong.ecolab-x.com/samples/....mp4">
+    <label>캡션</label>
+    <textarea id="pub_caption"></textarea>
+    <div class="checks">
+      <label><input type="checkbox" id="p_ig" checked> Instagram</label>
+      <label><input type="checkbox" id="p_fb" checked> Facebook</label>
+      <label><input type="checkbox" id="p_th" checked> Threads</label>
+    </div>
+    <button onclick="publish()">발행 (Threads는 30초 대기 포함)</button>
+    <div id="pub_result" class="status"></div>
+  </div>
+</div>
+
+<script>
+async function loadStatus(){
+  const el = document.getElementById('status');
+  el.textContent = '불러오는 중...';
+  el.className = 'status';
+  try{
+    const r = await fetch('/social-api/status');
+    const d = await r.json();
+    el.textContent = JSON.stringify(d, null, 2);
+    el.className = 'status ' + ((d.facebook.connected && d.threads.connected) ? 'ok' : '');
+  }catch(e){ el.textContent = '오류: ' + e; el.className='status bad'; }
+}
+async function connectMeta(){
+  const body = {
+    app_id: document.getElementById('fb_app_id').value.trim(),
+    app_secret: document.getElementById('fb_app_secret').value.trim(),
+    short_token: document.getElementById('fb_short_token').value.trim(),
+    page_id_hint: document.getElementById('fb_page_id_hint').value.trim(),
+  };
+  const r = await fetch('/social-api/connect-meta', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+  const d = await r.json();
+  alert(JSON.stringify(d, null, 2));
+  loadStatus();
+}
+async function connectThreads(){
+  const body = {
+    app_id: document.getElementById('th_app_id').value.trim(),
+    app_secret: document.getElementById('th_app_secret').value.trim(),
+    tester_token: document.getElementById('th_token').value.trim(),
+  };
+  const r = await fetch('/social-api/connect-threads', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+  const d = await r.json();
+  alert(JSON.stringify(d, null, 2));
+  loadStatus();
+}
+async function publish(){
+  const platforms = [];
+  if(document.getElementById('p_ig').checked) platforms.push('instagram');
+  if(document.getElementById('p_fb').checked) platforms.push('facebook');
+  if(document.getElementById('p_th').checked) platforms.push('threads');
+  const body = {
+    video_url: document.getElementById('pub_video_url').value.trim(),
+    caption: document.getElementById('pub_caption').value,
+    platforms,
+  };
+  const el = document.getElementById('pub_result');
+  el.textContent = '발행 중... (Threads 포함 시 최대 1~2분)';
+  el.className = 'status';
+  try{
+    const r = await fetch('/social-api/publish', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+    const d = await r.json();
+    el.textContent = JSON.stringify(d, null, 2);
+  }catch(e){ el.textContent = '오류: ' + e; el.className='status bad'; }
+}
+loadStatus();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# 시크릿 (access token 등)
+data/meta-config.json
+
+# 대용량 자동생성 미디어 (쇼츠/보이스랩) — 서버에만 보관
+media/
+voice-lab/*.mp3
+voice-lab/*.wav
+samples/
+
+# 자동수집 스냅샷(cron으로 재생성됨) — 필요시 주석 해제해 추적 가능
+# data/youtube.json
+# data/spotify.json
+
+# 잡다한 수동 백업 파일 (git 이력이 대체함)
+*.bak
+*.bak-*
+*.tmp

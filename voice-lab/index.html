@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>성경낭독 등록 실험실 (비공개)</title>
+<style>
+  :root{
+    --paper:#FBF8F1;--card:#ffffff;--ink:#2b2822;--sub:#7a7264;--line:#e7e0d3;
+    --accent:#9a7b33;--accent-soft:#f3ead4;--danger:#b5493f;--good:#5b8266;
+    --shadow:0 1px 3px rgba(60,50,30,.06),0 8px 24px rgba(60,50,30,.05);
+    --serif:'Nanum Myeongjo','Noto Serif KR',Batang,serif;
+    --sans:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{--paper:#17150f;--card:#211e17;--ink:#ece5d6;--sub:#a89f8c;--line:#332f24;--accent:#d3b061;--accent-soft:#2d281a;}
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;padding-bottom:60px}
+  .wrap{max-width:640px;margin:0 auto;padding:0 18px}
+  header{text-align:center;padding:28px 18px 10px}
+  h1{font-family:var(--serif);font-size:22px;margin:0}
+  .warn{background:var(--accent-soft);border:1px solid var(--line);color:var(--accent);
+    border-radius:12px;padding:10px 14px;font-size:12.5px;margin-top:12px;text-align:left;line-height:1.6}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;
+    box-shadow:var(--shadow);margin-top:18px}
+  .card h2{font-size:14px;margin:0 0 12px;color:var(--sub);font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+  label{display:block;font-size:13px;color:var(--sub);font-weight:600;margin-bottom:6px}
+  input[type=text],textarea,select{width:100%;font-family:inherit;font-size:15px;color:var(--ink);
+    background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:11px 13px;resize:vertical}
+  textarea{min-height:100px;font-family:var(--serif);line-height:1.8}
+  .field{margin-bottom:14px}
+  .row{display:flex;gap:10px}
+  .row>*{flex:1}
+  button{font-family:inherit;cursor:pointer;border:none;font-size:14px}
+  .btn{background:var(--accent);color:#fff;border-radius:10px;padding:11px 18px;font-weight:600;box-shadow:var(--shadow)}
+  .btn:disabled{opacity:.5;cursor:default}
+  .btn.ghost{background:var(--paper);color:var(--ink);border:1px solid var(--line);box-shadow:none}
+  .btn.danger{background:var(--danger);color:#fff}
+  .btn.rec{background:var(--danger);color:#fff}
+  .btn.rec.recording{animation:pulse 1.2s infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(181,73,63,.5)}50%{box-shadow:0 0 0 10px rgba(181,73,63,0)}}
+  .rec-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .rec-time{font-variant-numeric:tabular-nums;color:var(--sub);font-size:13px}
+  .preview{margin-top:12px}
+  .preview audio{width:100%}
+  .hint{font-size:12px;color:var(--sub);margin-top:8px;line-height:1.6}
+
+  .item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+    margin-top:12px;box-shadow:var(--shadow)}
+  .item-top{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .item .ref{font-family:var(--serif);font-weight:700;font-size:16px}
+  .item .badge{font-size:11px;font-weight:700;color:var(--good);border:1px solid var(--good);
+    border-radius:99px;padding:1px 8px;margin-left:auto}
+  .item .meta{font-size:12px;color:var(--sub);margin-bottom:8px}
+  .item .txt{font-family:var(--serif);font-size:14.5px;color:var(--ink);background:var(--accent-soft);
+    border-radius:10px;padding:10px 12px;margin-bottom:8px;line-height:1.7}
+  .item audio{width:100%;margin-bottom:8px}
+  .item .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .item .actions button{padding:6px 12px;border-radius:8px;font-size:12.5px}
+  .empty{text-align:center;color:var(--sub);font-size:13.5px;padding:20px}
+  .status{font-size:13px;color:var(--sub);margin-top:8px;min-height:18px}
+  .status.err{color:var(--danger)}
+  .status.ok{color:var(--good)}
+  .hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🎙️ 성경낭독 등록 실험실</h1>
+    <div class="warn">⚠️ 비공개 테스트 페이지입니다. 특허 출원 전이므로 이 화면과 링크를 외부에 공유하거나 공개하지 마세요.</div>
+  </header>
+
+  <div class="card">
+    <h2>새 낭독 등록</h2>
+    <div class="field">
+      <label>본문 표기 (예: 시편 23:1-6, 요한복음 3:16)</label>
+      <input type="text" id="f-ref" placeholder="본문 표기를 적어주세요">
+    </div>
+    <div class="row">
+      <div class="field">
+        <label>번역본</label>
+        <select id="f-trans">
+          <option value="개역한글">개역한글</option>
+          <option value="개역개정">개역개정</option>
+          <option value="새번역">새번역</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>본문 텍스트 (화면에 띄워두고 보며 녹음할 수 있어요)</label>
+      <textarea id="f-text" placeholder="본문을 붙여넣으세요"></textarea>
+    </div>
+    <div class="field">
+      <label>메모 (선택)</label>
+      <input type="text" id="f-note" placeholder="예: 2차 테이크, 호흡 개선">
+    </div>
+
+    <div class="field">
+      <label>녹음</label>
+      <div class="rec-row">
+        <button class="btn rec" id="btn-rec">● 녹음 시작</button>
+        <span class="rec-time" id="rec-time">00:00</span>
+      </div>
+      <div class="preview hide" id="preview-wrap">
+        <audio id="preview-audio" controls></audio>
+      </div>
+    </div>
+
+    <div class="rec-row" style="margin-top:14px">
+      <button class="btn" id="btn-upload" disabled>등록하기</button>
+      <button class="btn ghost" id="btn-clear">다시 녹음</button>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <div class="card">
+    <h2>등록된 낭독 <span id="count"></span></h2>
+    <div id="list"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+const $=(s)=>document.querySelector(s);
+const API='/voice-lab-api';
+let mediaRecorder=null, chunks=[], recBlob=null, recTimer=null, recSec=0, stream=null;
+
+function setStatus(msg,cls){const el=$('#status');el.textContent=msg||'';el.className='status'+(cls?(' '+cls):'');}
+function fmtTime(s){const m=Math.floor(s/60),ss=s%60;return String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0');}
+
+async function toggleRec(){
+  if(mediaRecorder && mediaRecorder.state==='recording'){
+    mediaRecorder.stop();
+    return;
+  }
+  try{
+    stream=await navigator.mediaDevices.getUserMedia({audio:true});
+  }catch(e){
+    setStatus('마이크 접근 권한이 필요합니다','err');return;
+  }
+  chunks=[];
+  const mime=MediaRecorder.isTypeSupported('audio/webm;codecs=opus')?'audio/webm;codecs=opus':'audio/webm';
+  mediaRecorder=new MediaRecorder(stream,{mimeType:mime});
+  mediaRecorder.ondataavailable=(e)=>{if(e.data.size>0)chunks.push(e.data);};
+  mediaRecorder.onstop=()=>{
+    recBlob=new Blob(chunks,{type:mime});
+    const url=URL.createObjectURL(recBlob);
+    $('#preview-audio').src=url;
+    $('#preview-wrap').classList.remove('hide');
+    $('#btn-upload').disabled=false;
+    stream.getTracks().forEach(t=>t.stop());
+    clearInterval(recTimer);
+    $('#btn-rec').textContent='● 녹음 시작';
+    $('#btn-rec').classList.remove('recording');
+  };
+  mediaRecorder.start();
+  recSec=0;$('#rec-time').textContent=fmtTime(0);
+  recTimer=setInterval(()=>{recSec++;$('#rec-time').textContent=fmtTime(recSec);},1000);
+  $('#btn-rec').textContent='■ 정지';
+  $('#btn-rec').classList.add('recording');
+  setStatus('');
+}
+
+function clearRec(){
+  recBlob=null;chunks=[];
+  $('#preview-wrap').classList.add('hide');
+  $('#preview-audio').removeAttribute('src');
+  $('#btn-upload').disabled=true;
+  $('#rec-time').textContent='00:00';
+  setStatus('');
+}
+
+async function upload(){
+  const ref=$('#f-ref').value.trim();
+  if(!ref){setStatus('본문 표기를 입력해 주세요','err');return;}
+  if(!recBlob){setStatus('먼저 녹음해 주세요','err');return;}
+  const fd=new FormData();
+  fd.append('ref',ref);
+  fd.append('translation',$('#f-trans').value);
+  fd.append('text',$('#f-text').value.trim());
+  fd.append('note',$('#f-note').value.trim());
+  fd.append('audio',recBlob,'take.webm');
+  $('#btn-upload').disabled=true;
+  setStatus('등록 중…');
+  try{
+    const r=await fetch(API+'/upload',{method:'POST',body:fd});
+    const d=await r.json();
+    if(!r.ok)throw new Error(d.error||'실패');
+    setStatus('✓ 등록되었습니다','ok');
+    clearRec();
+    $('#f-note').value='';
+    loadList();
+  }catch(e){
+    setStatus('등록 실패: '+e.message,'err');
+    $('#btn-upload').disabled=false;
+  }
+}
+
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function fmtDate(ts){const d=new Date(ts);return d.getFullYear()+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0')+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');}
+
+async function loadList(){
+  const el=$('#list');
+  try{
+    const r=await fetch(API+'/list');
+    const items=await r.json();
+    $('#count').textContent='('+items.length+')';
+    if(!items.length){el.innerHTML='<div class="empty">아직 등록된 낭독이 없습니다.</div>';return;}
+    el.innerHTML='';
+    items.forEach(it=>{
+      const d=document.createElement('div');d.className='item';
+      d.innerHTML=
+        '<div class="item-top"><span class="ref">'+esc(it.ref)+'</span>'+
+          (it.primary?'<span class="badge">★ 대표</span>':'')+'</div>'+
+        '<div class="meta">'+esc(it.translation||'')+(it.note?' · '+esc(it.note):'')+' · '+fmtDate(it.createdAt)+'</div>'+
+        (it.text?'<div class="txt">'+esc(it.text)+'</div>':'')+
+        '<audio controls preload="none" src="'+API+'/audio/'+it.id+'"></audio>'+
+        '<div class="actions">'+
+          (it.primary?'':'<button class="btn ghost" data-act="primary" data-id="'+it.id+'">대표로 지정</button>')+
+          '<button class="btn danger" data-act="del" data-id="'+it.id+'">삭제</button>'+
+        '</div>';
+      el.appendChild(d);
+    });
+    el.querySelectorAll('[data-act=primary]').forEach(b=>b.onclick=async()=>{
+      await fetch(API+'/primary/'+b.dataset.id,{method:'POST'});loadList();
+    });
+    el.querySelectorAll('[data-act=del]').forEach(b=>b.onclick=async()=>{
+      if(!confirm('이 낭독을 삭제할까요?'))return;
+      await fetch(API+'/delete/'+b.dataset.id,{method:'DELETE'});loadList();
+    });
+  }catch(e){
+    el.innerHTML='<div class="empty">목록을 불러오지 못했습니다.</div>';
+  }
+}
+
+$('#btn-rec').onclick=toggleRec;
+$('#btn-upload').onclick=upload;
+$('#btn-clear').onclick=clearRec;
+loadList();
+</script>
+</body>
+</html>

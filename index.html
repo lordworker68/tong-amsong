@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta name="naver-site-verification" content="f1cb8cfa0f56077846021536dee7f101858e1dda" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>통암송 · 말씀을 마음에 새기다</title>
+<meta name="description" content="한 정거장씩 말씀을 통째로 암송하는 여정 — 시편 23편·주기도문부터 산상수훈까지. 낭독·초성 가리기·빈칸 채우기로 마음에 새깁니다.">
+<style>
+  :root{
+    --paper:#FBF8F1; --card:#ffffff; --ink:#2b2822; --sub:#7a7264;
+    --line:#e7e0d3; --accent:#9a7b33; --accent-soft:#f3ead4;
+    --good:#5b8266; --hide:#cbbf9f; --shadow:0 1px 3px rgba(60,50,30,.06),0 8px 24px rgba(60,50,30,.05);
+    --serif:'Nanum Myeongjo','Noto Serif KR',Batang,'AppleMyungjo',serif;
+    --sans:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme]){--paper:#17150f;--card:#211e17;--ink:#ece5d6;--sub:#a89f8c;--line:#332f24;
+      --accent:#d3b061;--accent-soft:#2d281a;--hide:#4a442f;--shadow:0 1px 3px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.3);}
+  }
+  :root[data-theme="light"]{--paper:#FBF8F1;--card:#fff;--ink:#2b2822;--sub:#7a7264;--line:#e7e0d3;--accent:#9a7b33;--accent-soft:#f3ead4;--hide:#cbbf9f;--shadow:0 1px 3px rgba(60,50,30,.06),0 8px 24px rgba(60,50,30,.05);}
+  :root[data-theme="dark"]{--paper:#17150f;--card:#211e17;--ink:#ece5d6;--sub:#a89f8c;--line:#332f24;--accent:#d3b061;--accent-soft:#2d281a;--hide:#4a442f;--shadow:0 1px 3px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.3);}
+
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:40px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+
+  /* Header / Hero */
+  /* 히어로 배경 이미지 — 통암송 로고가 이미지 위에 겹쳐 보이도록. 성도들(하단 인물)까지 보이게 충분한 높이 확보 */
+  .hero-bgimg{position:absolute;top:0;left:0;right:0;height:430px;overflow:hidden;z-index:-2;background:#1a1508}
+  .hero-bgimg picture,.hero-bgimg img{width:100%;height:100%;object-fit:cover;object-position:center 34%;display:block}
+  .hero-bgimg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(12,9,3,.1) 0%,rgba(12,9,3,.2) 40%,rgba(12,9,3,.03) 58%,transparent 78%,var(--paper) 97%)}
+  @media(min-width:600px){
+    .hero-bgimg{max-width:760px;left:50%;transform:translateX(-50%);height:480px}
+  }
+  .hero-title{padding-top:150px;padding-bottom:230px}
+  .hero-title .logo{color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.55),0 1px 4px rgba(0,0,0,.5)}
+  @media(min-width:600px){.hero-title{padding-top:180px;padding-bottom:250px}}
+
+  header.hero{position:relative;text-align:center;padding:12px 18px 8px;overflow:hidden;isolation:isolate;margin-top:-1px}
+  .hero-glow{position:absolute;left:50%;top:-140px;width:520px;height:420px;transform:translateX(-50%);
+    background:radial-gradient(closest-side,rgba(212,176,97,.35),transparent 72%);
+    filter:blur(6px);z-index:-2;pointer-events:none;animation:glowpulse 7s ease-in-out infinite}
+  @keyframes glowpulse{0%,100%{opacity:.65;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
+  .hero-particles{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+  .mote{position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;background:var(--accent);
+    opacity:0;animation:motefloat linear forwards}
+  .mote.burst{width:5px;height:5px;background:#ffd889;box-shadow:0 0 6px 1px rgba(255,216,137,.7)}
+  @keyframes motefloat{
+    0%{opacity:0;transform:translate(0,0)}
+    12%{opacity:.6}
+    85%{opacity:.25}
+    100%{opacity:0;transform:translate(var(--drift,0px),-360px)}
+  }
+  .logo{font-family:var(--serif);font-size:22px;font-weight:800;letter-spacing:1px;color:var(--ink)}
+  @media(min-width:420px){.logo{font-size:26px}}
+  .logo .dot{color:var(--accent)}
+  .tagline{color:var(--sub);font-size:14px;margin-top:6px;letter-spacing:.5px}
+  .greet{text-align:center;font-size:13.5px;color:var(--accent);font-weight:600;margin:6px 0 0}
+  .toplinks{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .toplinks a{color:var(--accent);text-decoration:none;font-size:12.5px;font-weight:600;border:1px solid var(--line);
+    border-radius:999px;padding:6px 13px;display:inline-block;background:var(--card)}
+  .streak{display:inline-flex;gap:6px;align-items:center;margin-top:12px;background:var(--card);
+    border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--sub);box-shadow:var(--shadow)}
+  .streak b{color:var(--accent);font-size:15px}
+
+  /* Verse tablet */
+  .vtablet{position:relative;margin:22px auto 4px;max-width:520px;border-radius:28px 28px 12px 12px;
+    padding:26px 22px 24px;
+    background:radial-gradient(130% 160% at 50% -25%,rgba(255,255,255,.5),transparent 62%),
+      linear-gradient(160deg,var(--accent-soft),var(--card));
+    border:1px solid var(--line);
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset,var(--shadow),0 26px 50px -24px rgba(120,90,30,.4)}
+  .vtablet::before{content:"";position:absolute;left:50%;top:16px;bottom:16px;width:1px;
+    background:linear-gradient(var(--line),transparent 75%);opacity:.6}
+  .vtablet-top{display:flex;justify-content:center;margin-bottom:10px}
+  .today-ref{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.5px}
+  .today-text{font-family:var(--serif);font-size:19px;line-height:1.95;color:var(--ink);min-height:56px;
+    text-shadow:0 1px 0 rgba(255,255,255,.55)}
+  .today-text.loading{color:var(--sub);font-size:14px;text-shadow:none}
+  .cch{display:inline-block;opacity:0;transform:translateY(3px);animation:carveIn .5s ease forwards}
+  @keyframes carveIn{to{opacity:1;transform:translateY(0)}}
+
+  .engrave-btn{margin-top:20px;display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(160deg,var(--accent),#7c5f22);color:#fff;border-radius:999px;
+    padding:13px 26px;font-weight:700;font-size:15.5px;letter-spacing:.3px;
+    box-shadow:0 10px 24px -8px rgba(154,123,51,.55),inset 0 1px 0 rgba(255,255,255,.3);
+    transition:transform .12s,box-shadow .2s}
+  .engrave-btn:active{transform:translateY(1px) scale(.98)}
+  .engrave-hint{font-size:11.5px;color:var(--sub);margin-top:9px}
+
+  .vtablet.engraving{animation:tabletGlow 1.3s ease}
+  @keyframes tabletGlow{30%{box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 0 0 3px var(--accent-soft),var(--shadow),0 26px 60px -18px rgba(212,176,97,.65)}}
+  .vtablet.engraving::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:linear-gradient(100deg,transparent 30%,rgba(255,240,200,.65) 50%,transparent 70%);
+    background-size:250% 100%;background-position:150% 0;animation:sweep 1.3s ease;mix-blend-mode:overlay}
+  @keyframes sweep{0%{background-position:150% 0}100%{background-position:-50% 0}}
+
+  @media (prefers-reduced-motion: reduce){
+    .hero-glow,.mote,.cch,.vtablet.engraving,.vtablet.engraving::after{animation:none!important}
+  }
+
+  /* Buttons */
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;font-size:14px}
+  .btn{background:var(--accent);color:#fff;border-radius:10px;padding:11px 18px;font-weight:600;
+    box-shadow:var(--shadow);transition:filter .15s,transform .05s}
+  .btn:active{transform:translateY(1px)}
+  .btn:hover{filter:brightness(1.05)}
+  .btn.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:none}
+  .btn.sm{padding:7px 12px;font-size:13px;border-radius:8px}
+
+  /* Section titles */
+  .section-title{font-size:13px;color:var(--sub);font-weight:600;letter-spacing:1px;
+    margin:30px 4px 6px;text-transform:uppercase}
+
+  /* ---------- Journey ---------- */
+  .jintro{color:var(--sub);font-size:13.5px;text-align:center;margin:4px 10px 16px;line-height:1.7}
+  .jtrans{display:flex;justify-content:center;margin-bottom:8px}
+  .jtrans .seg{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px;box-shadow:var(--shadow)}
+  .jtrans .seg button{padding:6px 15px;border-radius:999px;font-size:12.5px;font-weight:600;color:var(--sub)}
+  .jtrans .seg button.on{background:var(--accent);color:#fff}
+  .jstage{margin:24px 4px 8px}
+  .jstage-t{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink)}
+  .jstage.complete .jstage-t{color:var(--good)}
+  .jstage-s{font-size:12.5px;color:var(--sub);margin-top:2px}
+  .jstage-prog{font-size:11px;font-weight:700;color:var(--accent);background:var(--accent-soft);
+    border-radius:99px;padding:2px 9px;margin-left:8px;vertical-align:2px}
+  .jstage.complete .jstage-prog{color:var(--good);background:transparent;border:1px solid var(--good)}
+  .jnext{font-size:10.5px;font-weight:700;color:#fff;background:var(--accent);
+    border-radius:99px;padding:2px 8px;margin-left:8px;vertical-align:2px}
+
+  /* celebration overlay */
+  .cele{position:fixed;inset:0;background:rgba(20,16,8,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+    display:none;place-items:center;z-index:100;padding:24px}
+  .cele.show{display:grid}
+  .cele-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px 26px;
+    max-width:360px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:cpop .35s ease}
+  @keyframes cpop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+  .cele-seal{font-size:52px;line-height:1}
+  .cele-title{font-family:var(--serif);font-size:21px;font-weight:800;margin-top:12px}
+  .cele-sub{color:var(--sub);font-size:13px;margin-top:6px}
+  .cele-verse{font-family:var(--serif);font-size:16px;line-height:1.8;color:var(--ink);
+    background:var(--accent-soft);border-radius:14px;padding:16px 18px;margin-top:18px}
+  .cele-verse cite{display:block;font-family:var(--sans);font-size:12px;color:var(--accent);
+    margin-top:9px;font-style:normal;font-weight:700}
+  .cele .btn{margin-top:20px}
+  .jstation{position:relative;display:grid;grid-template-columns:30px 1fr;gap:13px;padding-bottom:12px;cursor:pointer}
+  .jstation::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:2px;background:var(--line)}
+  .jstation:last-child::before{bottom:auto;height:22px}
+  .jnode{position:relative;z-index:1;width:28px;height:28px;border-radius:50%;background:var(--paper);
+    border:2px solid var(--line);display:grid;place-items:center;font-size:12px;color:var(--sub);margin-top:16px;transition:.2s}
+  .jstation.active .jnode{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+  .jstation.done .jnode{background:var(--good);border-color:var(--good);color:#fff}
+  .jcard{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px 16px;
+    box-shadow:var(--shadow);transition:transform .12s}
+  .jstation:hover .jcard{transform:translateY(-2px)}
+  .jref{font-family:var(--serif);font-size:18px;font-weight:700}
+  .jnote{font-size:12.5px;color:var(--sub);margin-top:3px}
+  .jnote .pill{color:var(--accent);font-weight:600}
+
+  /* Cards / library */
+  .plist{display:flex;flex-direction:column;gap:12px}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px;
+    box-shadow:var(--shadow);display:flex;align-items:center;gap:14px;cursor:pointer;transition:transform .12s,box-shadow .12s}
+  .pcard:hover{transform:translateY(-2px)}
+  .pcard .body{flex:1;min-width:0}
+  .pcard .ref{font-family:var(--serif);font-size:19px;font-weight:700}
+  .pcard .meta{font-size:12.5px;color:var(--sub);margin-top:3px}
+  .pcard .badge{flex-shrink:0;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+    background:var(--accent-soft);color:var(--accent);font-size:16px}
+  .pcard.done .badge{background:var(--good);color:#fff}
+  .progbar{height:5px;background:var(--line);border-radius:99px;margin-top:10px;overflow:hidden}
+  .progbar i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .3s}
+
+  .add-card{border:1.5px dashed var(--line);background:transparent;border-radius:16px;padding:16px;
+    text-align:center;color:var(--sub);cursor:pointer;font-weight:600;width:100%}
+  .add-card:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* Media / SNS */
+  .media-links{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:14px 0 4px}
+  @media(max-width:480px){.media-links{grid-template-columns:repeat(2,1fr)}}
+  .media-links a{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 8px;
+    text-align:center;box-shadow:var(--shadow);color:inherit;text-decoration:none;transition:transform .12s;display:block}
+  .media-links a:hover{transform:translateY(-2px)}
+  .media-links .mi{font-size:21px}
+  .media-links b{display:block;margin-top:6px;font-size:12.5px}
+  .media-links span{display:block;font-size:10.5px;color:var(--sub);margin-top:2px}
+  .media-sub{display:flex;align-items:baseline;justify-content:space-between;margin:26px 4px 10px;gap:8px;flex-wrap:wrap}
+  .media-sub h3{font-size:14px;font-weight:700;margin:0}
+  .media-sub h3 small{font-size:11px;color:var(--sub);font-weight:600;margin-left:5px}
+  .media-sub a{font-size:12px;font-weight:700;color:var(--accent);text-decoration:none;white-space:nowrap}
+  .yt-subhead{font-size:11.5px;font-weight:700;color:var(--sub);margin:14px 2px 8px;letter-spacing:.3px}
+  .ytgrid-short{grid-template-columns:repeat(3,1fr)}
+  .ytgrid-short .th{aspect-ratio:9/16}
+  @media(max-width:420px){.ytgrid-short{grid-template-columns:repeat(2,1fr)}}
+  .spo-book{margin-top:20px}
+  .spo-book:first-child{margin-top:0}
+  .spo-book-head{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--accent);margin:0 2px 8px}
+  .ytgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  @media(max-width:420px){.ytgrid{grid-template-columns:1fr}}
+  .ytcard{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card);
+    box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:transform .12s}
+  .ytcard:hover{transform:translateY(-2px)}
+  .ytcard .th{position:relative;aspect-ratio:16/9;background:#000}
+  .ytcard .th img{width:100%;height:100%;object-fit:cover;display:block}
+  .ytcard .th::after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;color:#fff;
+    font-size:19px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+  .ytcard .yt{padding:9px 11px 3px;font-size:12.5px;font-weight:700;line-height:1.4;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .ytcard .yd{padding:0 11px 10px;font-size:10.5px;color:var(--sub)}
+  .spo-list{display:flex;flex-direction:column;gap:9px}
+  .spo-ep{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;box-shadow:var(--shadow)}
+  .spo-ep .st{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+  .spo-ep .stt{font-family:var(--serif);font-weight:700;font-size:14px;line-height:1.4}
+  .spo-ep .sd{font-size:10.5px;color:var(--sub);white-space:nowrap;flex-shrink:0}
+  .spo-ep .sf{display:flex;align-items:center;gap:10px;margin-top:9px}
+  .spo-ep .spbtn{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:6px 13px;font-size:11.5px;font-weight:700}
+  .spo-ep .stime{font-size:10.5px;color:var(--sub)}
+  .spo-ep audio{width:100%;margin-top:10px;display:none}
+  .spo-ep.playing audio{display:block}
+  .media-empty{text-align:center;color:var(--sub);font-size:12.5px;padding:16px;grid-column:1/-1}
+  .mine-empty{font-size:12.5px;color:var(--sub);text-align:center;padding:2px 10px 0;line-height:1.6}
+
+  /* Editor */
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;color:var(--sub);font-weight:600;margin-bottom:7px}
+  input[type=text],textarea{width:100%;font-family:inherit;font-size:15px;color:var(--ink);
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;resize:vertical}
+  textarea{min-height:220px;font-family:var(--serif);line-height:1.9}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  .hint{font-size:12.5px;color:var(--sub);margin-top:6px;line-height:1.5}
+
+  /* Study */
+  .topbar{display:flex;align-items:center;gap:12px;padding:14px 0 6px}
+  .topbar .ref{font-family:var(--serif);font-size:20px;font-weight:700;flex:1}
+  .modes{display:flex;gap:8px;overflow-x:auto;padding:6px 0 14px;scrollbar-width:none}
+  .modes::-webkit-scrollbar{display:none}
+  .mode{flex-shrink:0;padding:8px 14px;border-radius:999px;border:1px solid var(--line);
+    background:var(--card);color:var(--sub);font-weight:600;font-size:13.5px}
+  .mode.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  .verses{background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:26px 24px;box-shadow:var(--shadow);font-family:var(--serif);font-size:19px;line-height:2.05}
+  .verse{margin:0 0 4px;padding:6px 8px;border-radius:8px;transition:background .2s;cursor:pointer}
+  .verse .vn{font-family:var(--sans);font-size:12px;color:var(--accent);font-weight:700;
+    vertical-align:6px;margin-right:5px;user-select:none}
+  .verse.read{background:var(--accent-soft)}
+  .verse.focus{background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+  .verse.hidden-v{color:transparent;background:repeating-linear-gradient(100deg,var(--line),var(--line) 12px,transparent 12px,transparent 24px)}
+  .verse.hidden-v .vn{color:var(--accent)}
+
+  /* token hiding */
+  .tok{cursor:pointer;border-radius:4px;padding:0 1px}
+  .tok.blank{color:transparent;background:var(--hide);border-radius:5px;position:relative}
+  .tok.blank::after{content:"";}
+  .tok.revealed{background:var(--accent-soft);color:var(--ink)}
+  .cho .rest{opacity:.28;font-weight:400}
+
+  .study-foot{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap}
+  .controls{display:flex;gap:8px;flex-wrap:wrap}
+  .selrow{display:flex;gap:8px;align-items:center;margin:14px 2px 0;flex-wrap:wrap;font-size:13px;color:var(--sub)}
+  .selrow input[type=range]{accent-color:var(--accent)}
+
+  .empty{text-align:center;color:var(--sub);padding:20px 20px;font-size:15px}
+  .empty .big{font-size:40px;margin-bottom:10px}
+
+  footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px;line-height:1.7}
+  footer .v{font-family:var(--serif);color:var(--ink);font-size:14px;margin-bottom:8px}
+  .iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--card);
+    display:grid;place-items:center;font-size:16px;flex-shrink:0}
+  .iconbtn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .hide{display:none!important}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);opacity:0;
+    background:var(--ink);color:var(--paper);padding:11px 20px;border-radius:999px;font-size:14px;
+    transition:.25s;pointer-events:none;z-index:50;box-shadow:var(--shadow)}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-bgimg" aria-hidden="true">
+    <picture>
+      <source srcset="/media/images/hero-banner.webp" type="image/webp">
+      <img src="/media/images/hero-banner.jpg" alt="세대와 열방을 넘어 함께 말씀을 암송하는 사람들 — 모세의 돌판에서 오늘의 성경으로 이어지는 생명의 말씀" width="1400" height="1400">
+    </picture>
+  </div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-particles" id="particles" aria-hidden="true"></div>
+
+  <div class="hero-title">
+    <div class="logo">즐겁게 익히는 통암송 Song</div>
+  </div>
+  <div class="tagline">한 정거장씩, 말씀을 마음판에 새기다</div>
+  <div class="greet" id="greet"></div>
+
+  <div class="toplinks">
+    <a href="/study.html">📖 원어 묵상</a>
+    <a href="/daily-track.html">📊 날마다 쌓이는 소리</a>
+    <a href="https://www.youtube.com/@tongamsong" target="_blank" rel="noopener">🎬 유튜브 찬양</a>
+    <a href="https://open.spotify.com/show/0BNrpFEwm3BVXTv8EAL4Og" target="_blank" rel="noopener">🎧 스포티파이로 듣기</a>
+  </div>
+
+  <div class="streak" id="streak"></div>
+
+  <!-- VERSE TABLET -->
+  <div class="vtablet" id="vtablet">
+    <div class="vtablet-top">
+      <span class="today-ref" id="today-ref">오늘의 말씀</span>
+    </div>
+    <div class="today-text loading" id="today-text">말씀을 불러오는 중…</div>
+    <button class="engrave-btn" id="engrave-btn" onclick="engraveToday()">
+      <span class="eb-icon">✦</span> 말씀 새기기
+    </button>
+    <div class="engrave-hint">누르면 오늘의 말씀이 소리와 함께 마음에 새겨집니다</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- LIBRARY / HOME -->
+  <div id="view-lib">
+
+    <!-- JOURNEY -->
+    <div class="section-title">통암송 여정</div>
+    <div class="jintro">준비할 것 없이, 정거장을 누르면 말씀이 바로 손에 들어옵니다.<br>주님과 함께 한 절씩 마음에 심으며 걷는 길이에요.</div>
+    <div class="jtrans">
+      <div class="seg">
+        <button id="tr-KRV" onclick="setTrans('KRV')">개역한글</button>
+        <button id="tr-RNKSV" onclick="setTrans('RNKSV')">새번역</button>
+      </div>
+    </div>
+    <div id="journey"></div>
+
+    <!-- MY PASSAGES -->
+    <div class="section-title">나의 본문</div>
+    <div class="plist" id="plist"></div>
+    <button class="add-card" style="margin-top:14px" onclick="openEditor()">＋ 직접 본문 추가 (개역개정 등 붙여넣기)</button>
+
+    <!-- MEDIA -->
+    <div class="section-title" style="margin-top:38px">미디어 연동</div>
+    <div class="jintro">어디서나 통암송과 함께하세요 — 채널에서 소식을 만나보실 수 있어요.</div>
+    <div class="media-links">
+      <a href="https://www.youtube.com/@tongamsong" target="_blank" rel="noopener"><div class="mi">▶️</div><b>YouTube</b><span>암송 영상</span></a>
+      <a href="https://open.spotify.com/show/0BNrpFEwm3BVXTv8EAL4Og" target="_blank" rel="noopener"><div class="mi">🎧</div><b>Spotify</b><span>성경읽는 희석이</span></a>
+      <a href="https://www.instagram.com/tongamsong/" target="_blank" rel="noopener"><div class="mi">📸</div><b>Instagram</b><span>@tongamsong</span></a>
+      <a href="https://www.facebook.com/profile.php?id=1198606753341879" target="_blank" rel="noopener"><div class="mi">📘</div><b>Facebook</b><span>통암송</span></a>
+    </div>
+
+    <div class="media-sub">
+      <h3>📺 최신 암송 Song 영상<small>· 유튜브 자동 업데이트</small></h3>
+      <a href="https://www.youtube.com/@tongamsong" target="_blank" rel="noopener">채널 전체 보기 →</a>
+    </div>
+    <div class="yt-subhead">🎵 풀영상</div>
+    <div class="ytgrid" id="ytGridFull"><div class="media-empty">영상을 불러오는 중…</div></div>
+    <div class="yt-subhead">⚡ 쇼츠</div>
+    <div class="ytgrid ytgrid-short" id="ytGridShorts"><div class="media-empty">영상을 불러오는 중…</div></div>
+
+    <div class="media-sub">
+      <h3>🎧 성경읽는 희석이<small>· Spotify 자동 업데이트 · 책별 정리</small></h3>
+      <a href="https://open.spotify.com/show/0BNrpFEwm3BVXTv8EAL4Og" target="_blank" rel="noopener">쇼 전체 보기 →</a>
+    </div>
+    <div id="spoBooks"><div class="media-empty">에피소드를 불러오는 중…</div></div>
+  </div>
+
+  <!-- EDITOR -->
+  <div id="view-edit" class="hide">
+    <div class="topbar">
+      <button class="iconbtn" onclick="go('lib')">←</button>
+      <div class="ref" id="edit-title-lbl">새 본문 추가</div>
+    </div>
+    <div class="field">
+      <label>본문 제목 (예: 요한복음 1장, 시편 23편)</label>
+      <input type="text" id="edit-ref" placeholder="본문 이름을 적어주세요">
+    </div>
+    <div class="field">
+      <label>성경 본문 붙여넣기</label>
+      <textarea id="edit-text" placeholder="한 줄에 한 절씩 붙여넣으세요.&#10;절 번호가 있으면 자동으로 인식합니다.&#10;&#10;예)&#10;1 태초에 말씀이 계시니라&#10;2 그 말씀이 하나님과 함께 계셨으니"></textarea>
+      <div class="hint">💡 저작권 보호를 위해 본문은 기기(브라우저)에만 저장되며 외부로 전송되지 않습니다. 사용하시는 성경 앱·성경책에서 직접 복사해 붙여넣으세요.</div>
+    </div>
+    <div class="study-foot">
+      <button class="btn ghost sm" id="edit-del" onclick="deleteCurrent()">삭제</button>
+      <div class="controls">
+        <button class="btn ghost" onclick="go('lib')">취소</button>
+        <button class="btn" onclick="savePassage()">저장</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STUDY -->
+  <div id="view-study" class="hide">
+    <div class="topbar">
+      <button class="iconbtn" onclick="go('lib')">←</button>
+      <div class="ref" id="study-ref"></div>
+      <button class="iconbtn" id="speak-btn" onclick="toggleSpeak()" title="들으며 따라 읽기">🔊</button>
+      <button class="iconbtn" onclick="editCurrent()" title="편집">✎</button>
+    </div>
+    <div class="modes" id="modes"></div>
+
+    <div class="selrow" id="selrow"></div>
+
+    <div class="verses" id="verses"></div>
+
+    <div class="study-foot">
+      <div class="controls" id="study-controls"></div>
+      <button class="btn" id="mark-btn" onclick="toggleMemorized()"></button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="v" id="foot-verse"></div>
+  통암송 · ecolab-x.com · 개척교회 디지털 섬김<br>
+  <a href="https://www.youtube.com/@tongamsong" target="_blank" rel="noopener" style="color:var(--sub);text-decoration:underline">YouTube @tongamsong</a>에서 노래로 암송하는 영상도 함께 만나보세요<br>
+  본문 API © bolls.life (개역한글·새번역) · 나의 본문은 이용자 기기에만 저장됩니다
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<div class="cele" id="cele" onclick="closeCele(event)">
+  <div class="cele-card">
+    <div class="cele-seal" id="cele-seal">🌱</div>
+    <div class="cele-title" id="cele-title"></div>
+    <div class="cele-sub" id="cele-sub"></div>
+    <div class="cele-verse" id="cele-verse"></div>
+    <button class="btn" onclick="closeCele()">다음 길로 →</button>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ---------- storage ---------- */
+const LS_P='tongamsong.passages', LS_S='tongamsong.streak', LS_T='tongamsong.theme', LS_TR='tongamsong.trans';
+const $=(s)=>document.querySelector(s);
+function load(){try{return JSON.parse(localStorage.getItem(LS_P))||null}catch(e){return null}}
+function save(){localStorage.setItem(LS_P,JSON.stringify(passages))}
+let passages=load()||[];
+save();
+function uid(){return 'p'+Math.abs(Date.now?Date.now():passages.length)+Math.floor(performance.now()*7%9999)}
+
+/* ---------- footer verse ---------- */
+$('#foot-verse').textContent='"내가 주의 말씀을 마음에 두었나이다" (시 119:11)';
+
+/* ---------- streak ---------- */
+function todayKey(){const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()}
+function renderStreak(){
+  let s;try{s=JSON.parse(localStorage.getItem(LS_S))}catch(e){}
+  s=s||{count:0,last:null};
+  $('#streak').innerHTML='🔥 연속 <b>'+s.count+'</b>일 · 오늘도 말씀 앞에';
+}
+function touchStreak(){
+  let s;try{s=JSON.parse(localStorage.getItem(LS_S))}catch(e){}
+  s=s||{count:0,last:null};
+  const t=todayKey();
+  if(s.last===t)return;
+  const y=new Date();y.setDate(y.getDate()-1);
+  const yk=y.getFullYear()+'-'+(y.getMonth()+1)+'-'+y.getDate();
+  s.count=(s.last===yk)?s.count+1:1;
+  s.last=t;
+  localStorage.setItem(LS_S,JSON.stringify(s));
+  renderStreak();
+}
+
+/* ---------- journey data ---------- */
+const JOURNEY=[
+  {stage:'첫 걸음', sub:'짧고 익숙한 말씀부터, 부담 없이', seal:'🌱',
+   blessing:{t:'잘하였도다 착하고 충성된 종아 네가 적은 일에 충성하였으매', cite:'마태복음 25:21'}, items:[
+    {jkey:'ps23', ref:'시편 23편', note:'여호와는 나의 목자', b:19,c:23},
+    {jkey:'lord', ref:'주기도문', note:'마태복음 6:9-13', b:40,c:6,v1:9,v2:13},
+    {jkey:'beat', ref:'팔복', note:'마태복음 5:3-12', b:40,c:5,v1:3,v2:12},
+    {jkey:'ps1',  ref:'시편 1편', note:'복 있는 사람', b:19,c:1},
+  ]},
+  {stage:'말씀 안으로', sub:'한 장을 통째로 마음에', seal:'🌿',
+   blessing:{t:'주의 말씀은 내 발에 등이요 내 길에 빛이니이다', cite:'시편 119:105'}, items:[
+    {jkey:'love', ref:'고린도전서 13장', note:'사랑장', b:46,c:13},
+    {jkey:'php4', ref:'빌립보서 4장', note:'항상 기뻐하라', b:50,c:4},
+    {jkey:'jn1',  ref:'요한복음 1장', note:'태초에 말씀이', b:43,c:1},
+  ]},
+  {stage:'산상수훈', sub:'긴 호흡으로 걷는 예수님의 가르침', seal:'🌳',
+   blessing:{t:'누구든지 나의 이 말을 듣고 행하는 자는 그 집을 반석 위에 지은 지혜로운 사람 같으리니', cite:'마태복음 7:24'}, items:[
+    {jkey:'mt5', ref:'마태복음 5장', note:'산상수훈 (1)', b:40,c:5},
+    {jkey:'mt6', ref:'마태복음 6장', note:'산상수훈 (2)', b:40,c:6},
+    {jkey:'mt7', ref:'마태복음 7장', note:'산상수훈 (3)', b:40,c:7},
+  ]},
+];
+const FINAL_BLESSING={t:'네 시작은 미약하였으나 네 나중은 심히 창대하리라', cite:'욥기 8:7'};
+function getTrans(){return localStorage.getItem(LS_TR)||'KRV'}
+function setTrans(t){localStorage.setItem(LS_TR,t);paintTrans();renderToday();}
+function paintTrans(){const t=getTrans();$('#tr-KRV').classList.toggle('on',t==='KRV');$('#tr-RNKSV').classList.toggle('on',t==='RNKSV');}
+function stripTags(s){return (s||'').replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim()}
+
+/* ---------- greeting + verse of the day ---------- */
+function greeting(){
+  const h=new Date().getHours();
+  if(h>=5&&h<11)return '좋은 아침이에요 ☀️ 말씀으로 하루를 여세요';
+  if(h>=11&&h<17)return '평안한 오후예요 🌤 잠시 말씀 앞에 머무세요';
+  if(h>=17&&h<22)return '저녁이 찾아왔어요 🌙 오늘도 한 절, 마음에 심어요';
+  return '고요한 밤이에요 ✨ 말씀과 함께 하루를 마무리해요';
+}
+function dayOfYear(){const d=new Date();const s=new Date(d.getFullYear(),0,0);return Math.floor((d-s)/86400000);}
+const VOTD=[
+  {ref:'요한복음 3:16',b:43,c:3,v:16},{ref:'빌립보서 4:13',b:50,c:4,v:13},{ref:'시편 23:1',b:19,c:23,v:1},
+  {ref:'이사야 41:10',b:23,c:41,v:10},{ref:'잠언 3:5',b:20,c:3,v:5},{ref:'마태복음 11:28',b:40,c:11,v:28},
+  {ref:'로마서 8:28',b:45,c:8,v:28},{ref:'여호수아 1:9',b:6,c:1,v:9},{ref:'시편 46:1',b:19,c:46,v:1},
+  {ref:'빌립보서 4:6',b:50,c:4,v:6},{ref:'요한복음 14:6',b:43,c:14,v:6},{ref:'시편 118:24',b:19,c:118,v:24},
+  {ref:'예레미야 29:11',b:24,c:29,v:11},{ref:'고린도전서 13:4',b:46,c:13,v:4},{ref:'마태복음 6:33',b:40,c:6,v:33},
+  {ref:'시편 121:1',b:19,c:121,v:1},{ref:'이사야 40:31',b:23,c:40,v:31},{ref:'베드로전서 5:7',b:60,c:5,v:7},
+  {ref:'갈라디아서 2:20',b:48,c:2,v:20},{ref:'시편 37:4',b:19,c:37,v:4},{ref:'히브리서 11:1',b:58,c:11,v:1},
+  {ref:'요한일서 4:19',b:62,c:4,v:19},{ref:'시편 119:105',b:19,c:119,v:105},{ref:'마태복음 28:20',b:40,c:28,v:20},
+  {ref:'빌립보서 1:6',b:50,c:1,v:6},{ref:'시편 27:1',b:19,c:27,v:1},{ref:'로마서 12:2',b:45,c:12,v:2},
+  {ref:'데살로니가전서 5:16',b:52,c:5,v:16},{ref:'시편 34:8',b:19,c:34,v:8},{ref:'요한복음 15:5',b:43,c:15,v:5},
+];
+let todayVerse=null; // {ref,text}
+function renderGreet(){$('#greet').textContent=greeting();}
+async function renderToday(){
+  const pick=VOTD[dayOfYear()%VOTD.length];
+  $('#today-ref').textContent='오늘의 말씀 · '+pick.ref;
+  const el=$('#today-text');
+  try{
+    const res=await fetch('https://bolls.life/get-verse/'+getTrans()+'/'+pick.b+'/'+pick.c+'/'+pick.v+'/');
+    if(!res.ok)throw 0;
+    const d=await res.json();
+    const t=stripTags(d.text||'');
+    if(!t)throw 0;
+    todayVerse={ref:pick.ref,text:t,b:pick.b,c:pick.c,v:pick.v};
+    el.textContent='“'+t+'”';el.classList.remove('loading');
+  }catch(e){
+    todayVerse=null;
+    el.textContent='말씀을 잠시 불러오지 못했어요. 새로고침하면 다시 나타납니다.';el.classList.add('loading');
+  }
+}
+function speakText(t){
+  if(!('speechSynthesis' in window)){toast('이 브라우저는 음성 읽기를 지원하지 않아요');return;}
+  try{speechSynthesis.cancel()}catch(e){}
+  const u=new SpeechSynthesisUtterance(t);u.lang='ko-KR';u.rate=0.95;speechSynthesis.speak(u);
+}
+function speakToday(){
+  if(!todayVerse)return;
+  if(getTrans()!=='KRV'){speakText(todayVerse.text);return;} // 자연 음성은 개역한글만 준비됨
+  const a=new Audio('/media/audio/votd/'+todayVerse.b+'_'+todayVerse.c+'_'+todayVerse.v+'.mp3');
+  let done=false;
+  const useTTS=()=>{if(done)return;done=true;speakText(todayVerse.text);};
+  a.addEventListener('error',useTTS);
+  a.play().then(()=>{done=true;}).catch(useTTS);
+}
+
+/* ---------- ambient particles (heart-tablet glow) ---------- */
+const REDUCE_MOTION=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function spawnMote(burst){
+  const wrap=$('#particles');if(!wrap||REDUCE_MOTION)return;
+  const m=document.createElement('div');m.className='mote'+(burst?' burst':'');
+  m.style.left=(burst?(40+Math.random()*20):(8+Math.random()*84))+'%';
+  m.style.setProperty('--drift',(Math.random()*50-25)+'px');
+  m.style.animationDuration=(burst?(1.2+Math.random()*1):(7+Math.random()*5))+'s';
+  wrap.appendChild(m);
+  setTimeout(()=>m.remove(),burst?2500:13000);
+}
+if(!REDUCE_MOTION){spawnMote();setInterval(spawnMote,2400);}
+
+/* ---------- engrave today's verse on the tablet ---------- */
+function engraveToday(){
+  if(!todayVerse){toast('말씀을 불러오는 중이에요, 잠시 후 다시 눌러주세요');renderToday();return;}
+  const tablet=$('#vtablet'),el=$('#today-text');
+  const chars=Array.from(todayVerse.text);
+  el.innerHTML=chars.map((c,i)=>c===' '?' ':'<span class="cch" style="animation-delay:'+Math.min(i*16,1100)+'ms">'+esc(c)+'</span>').join('');
+  el.classList.remove('loading');
+  tablet.classList.remove('engraving');void tablet.offsetWidth;tablet.classList.add('engraving');
+  if(!REDUCE_MOTION)for(let i=0;i<10;i++)setTimeout(()=>spawnMote(true),i*70);
+  if(navigator.vibrate)try{navigator.vibrate([12,30,12])}catch(e){}
+  speakToday();
+  touchStreak();
+  setTimeout(()=>toast('✦ 말씀이 마음판에 새겨졌습니다'),1300);
+}
+
+/* ---------- read-along (study) ---------- */
+let speaking=false;
+function updateSpeakBtn(){const b=$('#speak-btn');if(!b)return;b.textContent=speaking?'⏸':'🔊';b.classList.toggle('on',speaking);}
+function clearHighlight(){document.querySelectorAll('#verses .verse.focus').forEach(v=>v.classList.remove('focus'));}
+function toggleSpeak(){if(speaking){stopSpeak();return;}startSpeak();}
+function stopSpeak(){speaking=false;try{speechSynthesis.cancel()}catch(e){}updateSpeakBtn();clearHighlight();}
+function startSpeak(){
+  if(!('speechSynthesis' in window)){toast('이 브라우저는 음성 읽기를 지원하지 않아요');return;}
+  const p=find(cur);if(!p)return;const vs=parseVerses(p.text);
+  speaking=true;updateSpeakBtn();
+  let i=0;
+  const step=()=>{
+    if(!speaking||i>=vs.length){stopSpeak();return;}
+    clearHighlight();
+    const node=$('#verses').children[i];
+    if(node){node.classList.add('focus');node.scrollIntoView({block:'center',behavior:'smooth'});}
+    const u=new SpeechSynthesisUtterance(vs[i].t);u.lang='ko-KR';u.rate=0.95;
+    u.onend=()=>{i++;step();};
+    u.onerror=()=>{i++;step();};
+    speechSynthesis.speak(u);
+  };
+  step();
+}
+
+function isMemorized(jkey){const p=passages.find(x=>x.jkey===jkey);return !!(p&&p.memorized);}
+function stageCount(stg){let d=0;stg.items.forEach(it=>{if(isMemorized(it.jkey))d++;});return d;}
+function stageDone(stg){return stg.items.every(it=>isMemorized(it.jkey));}
+function nextStationKey(){
+  for(const stg of JOURNEY){for(const it of stg.items){if(!isMemorized(it.jkey))return it.jkey;}}
+  return null; // all memorized
+}
+function anyStarted(){return passages.some(p=>p.jkey);}
+
+function renderJourney(){
+  const el=$('#journey');el.innerHTML='';
+  const nextKey=nextStationKey();
+  const started=anyStarted();
+  JOURNEY.forEach(stg=>{
+    const done=stg.items.length;const cnt=stageCount(stg);const complete=cnt===done;
+    const h=document.createElement('div');h.className='jstage'+(complete?' complete':'');
+    const prog=complete?('완주 '+stg.seal):(cnt+'/'+done);
+    h.innerHTML='<div class="jstage-t">'+esc(stg.stage)+'<span class="jstage-prog">'+prog+'</span></div>'+
+      '<div class="jstage-s">'+esc(stg.sub)+'</div>';
+    el.appendChild(h);
+    stg.items.forEach(it=>{
+      const p=passages.find(x=>x.jkey===it.jkey);
+      const st=!!p;
+      const mem=p&&p.memorized;
+      let metaExtra='';
+      if(st){
+        if(mem){metaExtra=' · <span class="pill">암송 완료 🎉</span>';}
+        else{const vs=parseVerses(p.text);const read=(p.read||[]).length;const pct=vs.length?Math.round(read/vs.length*100):0;
+          metaExtra=' · <span class="pill">'+pct+'% 진행</span>';}
+      }
+      const isNext=it.jkey===nextKey;
+      const nextPill=isNext?'<span class="jnext">'+(started?'다음 걸음':'여기서 시작')+'</span>':'';
+      const node=document.createElement('div');
+      node.className='jstation'+(mem?' done':(st||isNext?' active':''));
+      node.onclick=()=>openJourney(it);
+      node.innerHTML=
+        '<div class="jnode">'+(mem?'✓':(st?'·':''))+'</div>'+
+        '<div class="jcard">'+
+          '<div class="jref">'+esc(it.ref)+nextPill+'</div>'+
+          '<div class="jnote">'+esc(it.note)+metaExtra+'</div>'+
+        '</div>';
+      el.appendChild(node);
+    });
+  });
+}
+
+/* ---------- stage celebration ---------- */
+const LS_CELE='tongamsong.celebrated';
+function celeState(){try{return JSON.parse(localStorage.getItem(LS_CELE))||{}}catch(e){return {}}}
+function saveCele(o){localStorage.setItem(LS_CELE,JSON.stringify(o))}
+function checkCelebrations(){
+  const cel=celeState();
+  if(JOURNEY.every(stageDone)&&!cel.all){
+    cel.all=true;saveCele(cel);
+    showCele('👑','통암송 여정을 완주했어요!','열한 말씀을 마음에 통째로 새겼습니다. 주님과 동행한 이 길을 축복합니다.',FINAL_BLESSING);
+    return;
+  }
+  for(let i=0;i<JOURNEY.length;i++){
+    const key='s'+i;const stg=JOURNEY[i];
+    if(stageDone(stg)&&!cel[key]){
+      cel[key]=true;saveCele(cel);
+      showCele(stg.seal,'『'+stg.stage+'』 여정을 완주했어요!',stg.items.length+'개의 말씀을 마음에 새겼습니다.',stg.blessing);
+      return;
+    }
+  }
+}
+function showCele(seal,title,sub,verse){
+  $('#cele-seal').textContent=seal;
+  $('#cele-title').textContent=title;
+  $('#cele-sub').textContent=sub;
+  $('#cele-verse').innerHTML='“'+esc(verse.t)+'”<cite>— '+esc(verse.cite)+'</cite>';
+  $('#cele').classList.add('show');
+}
+function closeCele(e){
+  if(e&&e.target&&e.target.id!=='cele')return; // 카드 내부 클릭은 무시
+  $('#cele').classList.remove('show');
+}
+
+async function openJourney(it){
+  const tr=getTrans();
+  let p=passages.find(x=>x.jkey===it.jkey);
+  if(p&&p.trans===tr){cur=p.id;mode='read';revealed={};go('study');renderStudy();return;}
+  toast('말씀을 불러오는 중…');
+  try{
+    const res=await fetch('https://bolls.life/get-text/'+tr+'/'+it.b+'/'+it.c+'/');
+    if(!res.ok)throw 0;
+    let vs=await res.json();
+    if(it.v1)vs=vs.filter(v=>v.verse>=it.v1&&v.verse<=it.v2);
+    if(!vs.length)throw 0;
+    const text=vs.map(v=>v.verse+' '+stripTags(v.text)).join('\n');
+    if(p){p.text=text;p.trans=tr;p.ref=it.ref;}
+    else{p={id:uid(),jkey:it.jkey,ref:it.ref,note:it.note,text,trans:tr,src:'journey',memorized:false,read:[]};passages.push(p);}
+    save();cur=p.id;mode='read';revealed={};go('study');renderStudy();
+  }catch(e){
+    toast('말씀을 불러오지 못했어요. 잠시 후 다시 시도해 주세요');
+  }
+}
+
+/* ---------- parse verses ---------- */
+function parseVerses(text){
+  const out=[];let auto=1;
+  text.split(/\n/).forEach(line=>{
+    line=line.replace(/\s+$/,'');
+    if(!line.trim())return;
+    const m=line.match(/^\s*(\d{1,3})[\.\)\s]\s*(.+)$/);
+    if(m){out.push({n:m[1],t:m[2].trim()})}
+    else{out.push({n:String(auto),t:line.trim()})}
+    auto++;
+  });
+  return out;
+}
+
+/* ---------- views ---------- */
+let cur=null; // current passage id
+function go(v){
+  stopSpeak();
+  ['lib','edit','study'].forEach(x=>$('#view-'+x).classList.toggle('hide',x!==v));
+  if(v==='lib'){renderJourney();renderLib();}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderLib(){
+  const el=$('#plist');el.innerHTML='';
+  const mine=passages.filter(p=>!p.jkey);
+  if(!mine.length){
+    el.innerHTML='<div class="mine-empty">여정 밖의 본문(개역개정·주보 본문 등)을 직접 담고 싶을 때 아래에서 추가하세요.</div>';return;
+  }
+  mine.forEach(p=>{
+    const vs=parseVerses(p.text);
+    const read=(p.read||[]).length;
+    const pct=vs.length?Math.round(read/vs.length*100):0;
+    const d=document.createElement('div');
+    d.className='pcard'+(p.memorized?' done':'');
+    d.onclick=()=>openStudy(p.id);
+    d.innerHTML='<div class="badge">'+(p.memorized?'✓':'📖')+'</div>'+
+      '<div class="body"><div class="ref">'+esc(p.ref)+'</div>'+
+      '<div class="meta">'+vs.length+'절 · '+(p.memorized?'암송 완료 🎉':(pct+'% 진행'))+'</div>'+
+      '<div class="progbar"><i style="width:'+(p.memorized?100:pct)+'%"></i></div></div>';
+    el.appendChild(d);
+  });
+}
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+/* ---------- editor ---------- */
+let editing=null;
+function openEditor(){editing=null;$('#edit-title-lbl').textContent='새 본문 추가';
+  $('#edit-ref').value='';$('#edit-text').value='';$('#edit-del').classList.add('hide');go('edit');$('#edit-ref').focus();}
+function editCurrent(){const p=find(cur);editing=cur;$('#edit-title-lbl').textContent='본문 편집';
+  $('#edit-ref').value=p.ref;$('#edit-text').value=p.text;$('#edit-del').classList.remove('hide');go('edit');}
+function savePassage(){
+  const ref=$('#edit-ref').value.trim()||'제목 없는 본문';
+  const text=$('#edit-text').value.trim();
+  if(!text){toast('본문을 붙여넣어 주세요');return;}
+  if(editing){const p=find(editing);p.ref=ref;p.text=text;}
+  else{const np={id:uid(),ref,text,memorized:false,read:[]};passages.unshift(np);editing=np.id;}
+  save();cur=editing;openStudy(cur);
+}
+function deleteCurrent(){
+  if(!editing)return;
+  if(!confirm('이 본문을 삭제할까요?'))return;
+  passages=passages.filter(p=>p.id!==editing);save();go('lib');
+}
+function find(id){return passages.find(p=>p.id===id)}
+
+/* ---------- study ---------- */
+const MODES=[
+  {k:'read',label:'낭독'},
+  {k:'cho',label:'초성 가리기'},
+  {k:'blank',label:'빈칸 채우기'},
+  {k:'recite',label:'전체 암송'},
+];
+let mode='read', blankPct=0.4, revealed={};
+function openStudy(id){cur=id;mode='read';revealed={};go('study');renderStudy();}
+function renderStudy(){
+  const p=find(cur);if(!p)return go('lib');
+  $('#study-ref').textContent=p.ref;
+  // mode tabs
+  $('#modes').innerHTML='';
+  MODES.forEach(m=>{
+    const b=document.createElement('button');
+    b.className='mode'+(m.k===mode?' active':'');
+    b.textContent=m.label;
+    b.onclick=()=>{stopSpeak();mode=m.k;revealed={};renderStudy();};
+    $('#modes').appendChild(b);
+  });
+  renderSelrow(p);
+  renderVerses(p);
+  renderControls(p);
+  updateSpeakBtn();
+  const mb=$('#mark-btn');
+  mb.textContent=p.memorized?'✓ 암송 완료':'암송했어요';
+  mb.className='btn'+(p.memorized?' ghost':'');
+}
+
+function renderSelrow(p){
+  const el=$('#selrow');el.innerHTML='';
+  if(mode==='blank'){
+    el.innerHTML='난이도 &nbsp;';
+    const r=document.createElement('input');r.type='range';r.min=15;r.max=80;r.step=5;r.value=Math.round(blankPct*100);
+    r.oninput=()=>{blankPct=r.value/100;lbl.textContent=r.value+'% 가림';renderVerses(p);};
+    const lbl=document.createElement('span');lbl.textContent=Math.round(blankPct*100)+'% 가림';lbl.style.marginLeft='8px';lbl.style.color='var(--accent)';lbl.style.fontWeight='600';
+    el.appendChild(r);el.appendChild(lbl);
+  }else if(mode==='read'){
+    el.textContent='각 절을 눌러 읽은 표시를 남기세요. 다 읽으면 아래에서 암송을 확인하세요.';
+  }else if(mode==='cho'){
+    el.textContent='첫 글자만 보고 떠올려 보세요. 단어를 누르면 나머지가 보입니다.';
+  }else{
+    el.textContent='절 번호만 보고 암송한 뒤, 절을 눌러 확인하세요.';
+  }
+}
+
+function renderVerses(p){
+  const vs=parseVerses(p.text);
+  const el=$('#verses');el.innerHTML='';
+  const read=new Set(p.read||[]);
+  vs.forEach((v,i)=>{
+    const d=document.createElement('div');
+    d.className='verse';
+    const vn='<span class="vn">'+v.n+'</span>';
+    if(mode==='read'){
+      if(read.has(v.n))d.classList.add('read');
+      d.innerHTML=vn+esc(v.t);
+      d.onclick=()=>{toggleRead(p,v.n);};
+    }else if(mode==='recite'){
+      const rk='r'+i;
+      if(revealed[rk]){d.innerHTML=vn+esc(v.t);}
+      else{d.classList.add('hidden-v');d.innerHTML=vn+esc(v.t);}
+      d.onclick=()=>{revealed[rk]=!revealed[rk];renderVerses(p);};
+    }else{
+      // token-based: cho or blank
+      d.innerHTML=vn+renderTokens(v.t,mode,i);
+    }
+    el.appendChild(d);
+  });
+  if(mode==='cho'||mode==='blank'){
+    el.querySelectorAll('.tok').forEach(t=>{
+      t.onclick=(e)=>{e.stopPropagation();const k=t.dataset.k;revealed[k]=true;
+        t.classList.remove('blank');t.classList.add('revealed');t.textContent=t.dataset.full;
+        if(t.dataset.mode==='cho'){t.innerHTML=esc(t.dataset.full);}
+      };
+    });
+  }
+}
+
+/* split into word tokens, keep it Korean-space based */
+function renderTokens(text,md,vi){
+  const words=text.split(/(\s+)/); // keep spaces
+  let html='';
+  const wordIdx=[];words.forEach((w,i)=>{if(w.trim())wordIdx.push(i);});
+  const blanks=new Set();
+  if(md==='blank'){
+    const n=Math.max(1,Math.round(wordIdx.length*blankPct));
+    const step=wordIdx.length/n;
+    for(let j=0;j<n;j++){const idx=Math.floor(j*step + (vi%2?step/2:0));blanks.add(wordIdx[Math.min(idx,wordIdx.length-1)]);}
+  }
+  words.forEach((w,i)=>{
+    if(!w.trim()){html+=w;return;}
+    const k='t'+vi+'_'+i;
+    const full=w;
+    if(md==='cho'){
+      if(revealed[k]){html+='<span class="tok revealed" data-k="'+k+'" data-full="'+esc(full)+'" data-mode="cho">'+esc(full)+'</span>';}
+      else{
+        const chars=Array.from(w);
+        const first=chars[0]||'';
+        const rest=chars.slice(1).map(()=>'○').join('');
+        html+='<span class="tok cho" data-k="'+k+'" data-full="'+esc(full)+'" data-mode="cho">'+esc(first)+'<span class="rest">'+rest+'</span></span>';
+      }
+    }else{ // blank
+      if(blanks.has(i)&&!revealed[k]){
+        const pad=Array.from(w).map(()=>'　').join('');
+        html+='<span class="tok blank" data-k="'+k+'" data-full="'+esc(full)+'" data-mode="blank">'+pad+'</span>';
+      }else{
+        html+='<span class="tok" data-k="'+k+'" data-full="'+esc(full)+'" data-mode="blank">'+esc(full)+'</span>';
+      }
+    }
+  });
+  return html;
+}
+
+function toggleRead(p,n){
+  p.read=p.read||[];
+  const i=p.read.indexOf(n);
+  if(i>=0)p.read.splice(i,1);else{p.read.push(n);touchStreak();}
+  save();renderVerses(p);
+}
+
+function renderControls(p){
+  const el=$('#study-controls');el.innerHTML='';
+  const add=(label,fn,ghost)=>{const b=document.createElement('button');b.className='btn sm'+(ghost?' ghost':'');b.textContent=label;b.onclick=fn;el.appendChild(b);};
+  if(mode==='read'){
+    add('전체 읽음',()=>{const vs=parseVerses(p.text);p.read=vs.map(v=>v.n);touchStreak();save();renderStudy();},true);
+    add('진도 초기화',()=>{p.read=[];save();renderStudy();},true);
+  }else if(mode==='blank'){
+    add('다시 섞기',()=>{revealed={};renderVerses(p);},true);
+    add('모두 보기',()=>{document.querySelectorAll('.tok').forEach(t=>revealed[t.dataset.k]=true);renderVerses(p);},true);
+  }else if(mode==='cho'){
+    add('모두 보기',()=>{document.querySelectorAll('.tok').forEach(t=>revealed[t.dataset.k]=true);renderVerses(p);},true);
+    add('다시 가리기',()=>{revealed={};renderVerses(p);},true);
+  }else{
+    add('모두 펼치기',()=>{const vs=parseVerses(p.text);vs.forEach((v,i)=>revealed['r'+i]=true);renderVerses(p);},true);
+    add('다시 가리기',()=>{revealed={};renderVerses(p);},true);
+  }
+}
+
+function toggleMemorized(){
+  const p=find(cur);p.memorized=!p.memorized;
+  if(p.memorized)touchStreak();
+  save();renderStudy();
+  if(p.memorized){toast('🎉 암송 완료! 말씀이 마음에 새겨졌습니다');checkCelebrations();}
+  else{toast('다시 암송 중으로 표시했어요');}
+}
+
+/* ---------- toast ---------- */
+let tt;
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2200);}
+
+/* ---------- media: youtube (RSS로 수집한 /data/youtube.json) — 풀영상/쇼츠 분리 ---------- */
+function fmtYMD(iso){if(!iso)return '';const d=new Date(iso);if(isNaN(d))return '';return d.getFullYear()+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0');}
+function ytCard(x){
+  return '<a class="ytcard" href="'+x.url+'" target="_blank" rel="noopener">'+
+    '<div class="th"><img loading="lazy" src="'+esc(x.thumb)+'" alt=""></div>'+
+    '<div class="yt">'+esc(x.title)+'</div>'+
+    '<div class="yd">'+fmtYMD(x.published)+'</div>'+
+  '</a>';
+}
+function loadYoutube(){
+  fetch('/data/youtube.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
+    const v=(d&&d.videos)||[];
+    const full=v.filter(x=>!x.is_short), shorts=v.filter(x=>x.is_short);
+    const elF=$('#ytGridFull'),elS=$('#ytGridShorts');
+    elF.innerHTML=full.length?full.map(ytCard).join(''):'<div class="media-empty">풀영상을 준비 중입니다.</div>';
+    elS.innerHTML=shorts.length?shorts.map(ytCard).join(''):'<div class="media-empty">쇼츠를 준비 중입니다.</div>';
+  }).catch(()=>{
+    const m='<div class="media-empty">유튜브 채널에서 확인해 주세요.</div>';
+    const elF=$('#ytGridFull'),elS=$('#ytGridShorts');if(elF)elF.innerHTML=m;if(elS)elS.innerHTML=m;
+  });
+}
+/* ---------- media: spotify (Anchor RSS로 수집한 /data/spotify.json) — 책별로 정리 ---------- */
+function spoCard(e,key){
+  return '<div class="spo-ep" id="spo-'+key+'">'+
+    '<div class="st"><div class="stt">'+esc(e.title)+'</div><div class="sd">'+esc(e.date)+'</div></div>'+
+    '<div class="sf">'+
+      (e.audio?'<button class="spbtn" onclick="toggleSpo(\''+key+'\')">▶ 재생</button>':'<a class="spbtn" href="'+esc(e.href)+'" target="_blank" rel="noopener">Spotify에서 듣기</a>')+
+      '<span class="stime">'+esc(e.time)+'</span>'+
+    '</div>'+
+    (e.audio?'<audio preload="none" controls src="'+esc(e.audio)+'"></audio>':'')+
+  '</div>';
+}
+function loadSpotify(){
+  fetch('/data/spotify.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
+    const el=$('#spoBooks');const books=(d&&d.books)||[];
+    if(!books.length){el.innerHTML='<div class="media-empty">에피소드를 준비 중입니다.</div>';return;}
+    el.innerHTML=books.map((b,bi)=>
+      '<div class="spo-book">'+
+        '<div class="spo-book-head">📖 '+esc(b.name)+'</div>'+
+        '<div class="spo-list">'+b.episodes.map((e,ei)=>spoCard(e,bi+'-'+ei)).join('')+'</div>'+
+      '</div>').join('');
+  }).catch(()=>{const el=$('#spoBooks');if(el)el.innerHTML='<div class="media-empty">스포티파이에서 확인해 주세요.</div>';});
+}
+function toggleSpo(key){
+  const card=$('#spo-'+key);if(!card)return;
+  document.querySelectorAll('.spo-ep.playing').forEach(c=>{if(c!==card){c.classList.remove('playing');const a=c.querySelector('audio');if(a)a.pause();}});
+  card.classList.add('playing');
+  const audio=card.querySelector('audio');if(audio)audio.play().catch(()=>{});
+}
+
+/* ---------- init ---------- */
+paintTrans();
+renderGreet();
+renderToday();
+renderStreak();
+renderJourney();
+renderLib();
+loadYoutube();
+loadSpotify();
+</script>
+</body>
+</html>
