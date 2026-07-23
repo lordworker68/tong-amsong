@@ -259,6 +259,20 @@ def publish_threads(user_id, token, video_url, caption):
     creation_id = r1.json()["id"]
 
     time.sleep(30)  # 가이드 13장: 발행 전 최소 30초 대기 필수
+    # 30초 고정 대기만으로는 영상 처리가 안 끝나 "미디어를 찾을 수 없습니다" 오류가 반복 발생해서
+    # (2026-07-22) 인스타 릴스와 동일하게 status_code=FINISHED가 될 때까지 최대 120초 폴링으로 보강.
+    deadline = time.time() + 120
+    while time.time() < deadline:
+        rs = requests.get(f"{THREADS_GRAPH}/{creation_id}", params={
+            "fields": "status,error_message", "access_token": token,
+        }).json()
+        if rs.get("status") == "FINISHED":
+            break
+        if rs.get("status") == "ERROR":
+            return {"ok": False, "step": "poll", "detail": rs}
+        time.sleep(5)
+    else:
+        return {"ok": False, "step": "poll_timeout"}
 
     r2 = requests.post(f"{THREADS_GRAPH}/{user_id}/threads_publish", data={
         "creation_id": creation_id, "access_token": token,
