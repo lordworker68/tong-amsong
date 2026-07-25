@@ -206,6 +206,21 @@
   .pv-video{margin-top:8px}
   .pv-video video{width:100%;border-radius:16px;box-shadow:var(--shadow-lg);display:block;background:#000}
 
+  /* ---------- Language basics ---------- */
+  .lang-tabs{display:flex;justify-content:center;gap:8px;margin:14px 0 4px;flex-wrap:wrap}
+  .lang-tab{padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);
+    color:var(--sub);font-weight:700;font-size:13px;box-shadow:var(--shadow);transition:.15s}
+  .lang-tab:hover{transform:translateY(-2px)}
+  .lang-tab.on{background:var(--accent);color:#fff;border-color:transparent;box-shadow:var(--shadow-lg)}
+  .lang-note{text-align:center;font-size:12.5px;color:var(--sub);margin:12px 6px 4px;line-height:1.6}
+  .lang-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:14px}
+  @media(max-width:480px){.lang-grid{grid-template-columns:repeat(4,1fr)}}
+  .lang-cell{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 6px;
+    text-align:center;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s}
+  .lang-cell:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  .lc-ch{font-family:var(--serif);font-size:22px;font-weight:800;color:var(--ink)}
+  .lc-name{font-size:10.5px;color:var(--sub);margin-top:4px}
+
   /* Cards / library */
   .plist{display:flex;flex-direction:column;gap:12px}
   .pcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:19px 19px;
@@ -397,6 +412,19 @@
       </video>
       <div class="jnote" style="text-align:center;margin-top:8px">히브리어·영어·한국어 3중언어로 부르는 잠언 1:1~6 — 노래로 먼저 느껴보세요</div>
     </div>
+
+    <!-- LANGUAGE BASICS -->
+    <div class="media-sub" style="margin-top:34px">
+      <h3>🔤 3개 언어, 알파벳부터 함께 배워요</h3>
+    </div>
+    <div class="jintro">노래를 따라 부르기 전에, 글자부터 눈에 익혀보세요.<br>한글 자모부터 히브리어 알파벳까지 — 누구나 처음엔 여기서 시작해요.</div>
+    <div class="lang-tabs" id="langTabs">
+      <button class="lang-tab" data-lang="ko" onclick="setLangTab('ko')">한국어</button>
+      <button class="lang-tab" data-lang="en" onclick="setLangTab('en')">English</button>
+      <button class="lang-tab" data-lang="he" onclick="setLangTab('he')">עברית</button>
+    </div>
+    <div class="lang-note" id="langNote"></div>
+    <div class="lang-grid" id="langGrid"></div>
 
     <!-- JOURNEY -->
     <div class="section-title" style="margin-top:38px">통암송 여정 <span style="font-weight:400;color:var(--sub);font-size:12px;text-transform:none;letter-spacing:0">· 시편부터 산상수훈까지, 더 깊이</span></div>
@@ -592,6 +620,39 @@ async function openProverbs(chap){
   }catch(e){
     toast('잠언을 불러오지 못했어요. 잠시 후 다시 시도해 주세요');
   }
+}
+
+/* ---------- language basics: alphabets ---------- */
+const ALPHABETS={
+  ko:{dir:'ltr',note:'한글은 왼쪽에서 오른쪽으로 읽어요. 자음 14자 + 모음 10자가 기본이에요.',items:[
+    ['ㄱ','기역'],['ㄴ','니은'],['ㄷ','디귿'],['ㄹ','리을'],['ㅁ','미음'],['ㅂ','비읍'],
+    ['ㅅ','시옷'],['ㅇ','이응'],['ㅈ','지읒'],['ㅊ','치읓'],['ㅋ','키읔'],['ㅌ','티읕'],
+    ['ㅍ','피읖'],['ㅎ','히읗'],['ㅏ','아'],['ㅑ','야'],['ㅓ','어'],['ㅕ','여'],
+    ['ㅗ','오'],['ㅛ','요'],['ㅜ','우'],['ㅠ','유'],['ㅡ','으'],['ㅣ','이'],
+  ]},
+  en:{dir:'ltr',note:'영어 알파벳도 왼쪽에서 오른쪽으로 읽어요. 대문자 26자가 기본이에요.',items:[
+    ['A','에이'],['B','비'],['C','씨'],['D','디'],['E','이'],['F','에프'],
+    ['G','지'],['H','에이치'],['I','아이'],['J','제이'],['K','케이'],['L','엘'],
+    ['M','엠'],['N','엔'],['O','오'],['P','피'],['Q','큐'],['R','알'],
+    ['S','에스'],['T','티'],['U','유'],['V','브이'],['W','더블유'],['X','엑스'],
+    ['Y','와이'],['Z','지'],
+  ]},
+  he:{dir:'rtl',note:'히브리어는 반대로, 오른쪽에서 왼쪽으로 읽어요. 자음 22자가 기본이에요.',items:[
+    ['א','알레프'],['ב','베트'],['ג','기멜'],['ד','달레트'],['ה','헤'],['ו','바브'],
+    ['ז','자인'],['ח','헤트'],['ט','테트'],['י','요드'],['כ','카프'],['ל','라메드'],
+    ['מ','멤'],['נ','눈'],['ס','사메크'],['ע','아인'],['פ','페'],['צ','차디'],
+    ['ק','코프'],['ר','레쉬'],['ש','신'],['ת','타브'],
+  ]},
+};
+function setLangTab(lang){
+  const data=ALPHABETS[lang];if(!data)return;
+  document.querySelectorAll('.lang-tab').forEach(b=>b.classList.toggle('on',b.dataset.lang===lang));
+  $('#langNote').textContent=data.note;
+  const grid=$('#langGrid');
+  grid.style.direction=data.dir;
+  grid.innerHTML=data.items.map(([ch,name])=>
+    '<div class="lang-cell"><div class="lc-ch">'+esc(ch)+'</div><div class="lc-name">'+esc(name)+'</div></div>'
+  ).join('');
 }
 
 /* ---------- journey data ---------- */
@@ -1067,6 +1128,7 @@ renderToday();
 renderStreak();
 renderProverbsToday();
 renderPvPicker();
+setLangTab('ko');
 renderJourney();
 renderLib();
 loadYoutube();
