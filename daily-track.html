@@ -22,14 +22,19 @@
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
     line-height:1.8;-webkit-font-smoothing:antialiased;min-height:100vh;
-    display:flex;flex-direction:column;}
+    display:flex;flex-direction:column;padding-top:48px;}
   h1{font-family:var(--serif);color:var(--ink);font-weight:600;margin:0 0 .55em;letter-spacing:-0.01em;}
   a{color:var(--accent);}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;width:100%;}
 
-  .backlink{padding:22px 0 0;}
-  .backlink a{color:var(--sub);text-decoration:none;font-size:12.5px;letter-spacing:.02em;}
-  .backlink a:hover{color:var(--accent);}
+  .topnav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:center;gap:8px;
+    padding:11px 14px;background:var(--card);border-bottom:1px solid var(--line);
+    box-shadow:0 8px 20px -14px rgba(0,0,0,.15);overflow-x:auto;scrollbar-width:none}
+  .topnav::-webkit-scrollbar{display:none}
+  .topnav a{color:var(--accent);text-decoration:none;font-size:12.5px;font-weight:600;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;display:inline-block;flex-shrink:0;background:var(--paper);
+    transition:transform .15s,box-shadow .15s,border-color .15s}
+  .topnav a:hover{transform:translateY(-2px);border-color:var(--accent)}
 
   main{flex:1;display:flex;align-items:center;}
   .hero{padding:20px 0 48px;text-align:center;}
@@ -68,9 +73,11 @@
 </head>
 <body>
 
-<div class="wrap backlink">
-  <a href="/">← 통암송 홈으로</a>
-</div>
+<nav class="topnav">
+  <a href="/">🏠 통암송 홈</a>
+  <a href="/study.html">📖 원어 묵상</a>
+  <a href="/lang-basics.html">🔤 언어별 발음기초</a>
+</nav>
 
 <main>
 <div class="wrap hero">

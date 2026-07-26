@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>언어별 발음기초 · 통암송</title>
+<meta name="description" content="한국어·영어·히브리어·그리스어의 기본 자음·모음과 전체 조합표를 한눈에 — 통암송을 위한 언어별 발음기초">
+<style>
+  :root{--paper:#FBF8F1;--card:#fff;--ink:#2b2822;--sub:#7a7264;--line:#e7e0d3;--accent:#9a7b33;--accent-soft:#f3ead4;--good:#5b8266;--shadow:0 1px 3px rgba(60,50,30,.06),0 8px 24px rgba(60,50,30,.05);--shadow-lg:0 4px 10px rgba(60,50,30,.08),0 14px 34px rgba(60,50,30,.08);
+    --serif:'Nanum Myeongjo','Noto Serif KR',Batang,serif;--sans:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  :root[data-theme="dark"]{--paper:#17150f;--card:#211e17;--ink:#ece5d6;--sub:#a89f8c;--line:#332f24;--accent:#d3b061;--accent-soft:#2d281a;--shadow:0 1px 3px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.3);--shadow-lg:0 4px 10px rgba(0,0,0,.35),0 14px 34px rgba(0,0,0,.35);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme]){--paper:#17150f;--card:#211e17;--ink:#ece5d6;--sub:#a89f8c;--line:#332f24;--accent:#d3b061;--accent-soft:#2d281a;--shadow:0 1px 3px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.3);--shadow-lg:0 4px 10px rgba(0,0,0,.35),0 14px 34px rgba(0,0,0,.35);}}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;padding-bottom:60px;padding-top:48px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:820px;margin:0 auto;padding:0 18px}
+  .topnav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:center;gap:8px;
+    padding:11px 14px;background:var(--card);border-bottom:1px solid var(--line);
+    box-shadow:0 8px 20px -14px rgba(60,50,30,.2);overflow-x:auto;scrollbar-width:none}
+  .topnav::-webkit-scrollbar{display:none}
+  .topnav a{color:var(--accent);text-decoration:none;font-size:12.5px;font-weight:600;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;display:inline-block;flex-shrink:0;background:var(--accent-soft);
+    transition:transform .15s,box-shadow .15s,border-color .15s}
+  .topnav a:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--accent)}
+  header{text-align:center;padding:18px 18px 10px}
+  .logo{font-family:var(--serif);font-size:26px;font-weight:800;letter-spacing:1px}
+  .logo .dot{color:var(--accent)}
+  .tagline{color:var(--sub);font-size:13.5px;margin-top:5px}
+  .jintro{text-align:center;font-size:13px;color:var(--sub);line-height:1.7;margin:22px 4px 0}
+  .en-sub{display:block;font-size:11.5px;color:var(--sub);font-style:italic;margin-top:5px;opacity:.85}
+  .en-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--sub);font-style:italic;
+    background:var(--accent-soft);border-radius:6px;padding:2px 8px;margin-left:4px;letter-spacing:.2px}
+
+  /* ---------- language basics ---------- */
+  .lang-tabs{display:flex;justify-content:center;gap:8px;margin:20px 0 4px;flex-wrap:wrap}
+  .lang-tab{padding:9px 20px;border-radius:999px;border:1px solid var(--line);background:var(--card);
+    color:var(--sub);font-weight:700;font-size:13.5px;box-shadow:var(--shadow);transition:.15s}
+  .lang-tab:hover{transform:translateY(-2px)}
+  .lang-tab.on{background:var(--accent);color:#fff;border-color:transparent;box-shadow:var(--shadow-lg)}
+  .lang-note{text-align:center;font-size:12.5px;color:var(--sub);margin:14px 6px 4px;line-height:1.6}
+  .lang-table-h{font-size:12.5px;font-weight:700;color:var(--accent);letter-spacing:.4px;margin:22px 2px 2px}
+  .lang-table-flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .lang-table{border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s}
+  .lang-table:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  .lang-table td{padding:10px 8px;text-align:center;min-width:32px;border-bottom:1px solid var(--line)}
+  .lang-table tr:last-child td{border-bottom:none}
+  .lc-ch{font-family:var(--serif);font-size:22px;font-weight:800;color:var(--ink)}
+  .lc-name{font-size:10.5px;color:var(--sub)}
+  .lc-rom{font-size:9px;color:var(--sub);font-style:italic;opacity:.8}
+
+  .lang-matrix-wrap{overflow-x:auto;margin-top:12px;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);-webkit-overflow-scrolling:touch}
+  table.lang-matrix{border-collapse:collapse;width:100%;min-width:max-content;background:var(--card)}
+  .lang-matrix th,.lang-matrix td{padding:9px 7px;text-align:center;border:1px solid var(--line);white-space:nowrap}
+  .lang-matrix thead th{background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:13px;
+    font-family:var(--serif);z-index:2}
+  .lang-matrix thead th:first-child{background:var(--card);position:sticky;inset-inline-start:0;z-index:3}
+  .lang-matrix tbody th{background:var(--accent-soft);color:var(--ink);font-weight:700;
+    font-family:var(--serif);font-size:16px;position:sticky;inset-inline-start:0;z-index:1}
+  .mx-ch{font-family:var(--serif);font-size:18px;font-weight:800;color:var(--ink)}
+  .mx-name{font-size:9.5px;color:var(--sub);margin-top:2px}
+  .mx-name.rom{font-style:italic;opacity:.85}
+
+  footer{text-align:center;color:var(--sub);font-size:11.5px;margin-top:44px;line-height:1.7}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="/">🏠 통암송 홈</a>
+  <a href="/study.html">📖 원어 묵상</a>
+</nav>
+<header>
+  <div class="logo">언어별 발음기초<span class="dot">.</span></div>
+  <div class="tagline">통암송을 위한 한국어·영어·히브리어·그리스어 기본 자모음과 조합표</div>
+</header>
+
+<div class="wrap">
+  <div class="jintro">노래를 따라 부르기 전에, 글자부터 눈에 익혀보세요.<br>한글 자모부터 히브리어·그리스어 알파벳까지 — 누구나 처음엔 여기서 시작해요.
+    <span class="en-sub">Get familiar with the letters before you sing along — from Hangul to Hebrew and Greek, everyone starts here.</span>
+  </div>
+
+  <div class="lang-tabs" id="langTabs">
+    <button class="lang-tab" data-lang="ko" onclick="setLangTab('ko')">한국어</button>
+    <button class="lang-tab" data-lang="en" onclick="setLangTab('en')">English</button>
+    <button class="lang-tab" data-lang="he" onclick="setLangTab('he')">עברית</button>
+    <button class="lang-tab" data-lang="el" onclick="setLangTab('el')">Ελληνικά</button>
+  </div>
+  <div class="lang-note" id="langNote"></div>
+
+  <div class="lang-table-h" id="langConsHead">자음 <span class="en-label">Consonants</span></div>
+  <div class="lang-table-flow" id="langConsGrid"></div>
+
+  <div class="lang-table-h" id="langVowHead">모음</div>
+  <div class="lang-table-flow" id="langVowGrid"></div>
+
+  <div class="lang-table-h" style="margin-top:26px">🔊 전체 조합표 <span class="en-label">Full Combination Table</span> <span id="langComboHint" style="color:var(--sub);font-weight:400"></span></div>
+  <div class="lang-note" id="langComboNote"></div>
+  <div class="lang-matrix-wrap"><table class="lang-matrix" id="langComboMatrix"></table></div>
+</div>
+
+<footer>
+  통암송 · tong.ecolab-x.com · 개척교회 디지털 섬김<br>
+  발음은 한국어 사용자를 위한 근사 표기이며, 실제 원어 발음과 차이가 있을 수 있습니다
+</footer>
+
+<script>
+"use strict";
+const $=(s)=>document.querySelector(s);
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+/* ---------- hangul syllable composition ---------- */
+const HANGUL_INITIALS=['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+const HANGUL_MEDIALS=['ㅏ','ㅐ','ㅑ','ㅒ','ㅓ','ㅔ','ㅕ','ㅖ','ㅗ','ㅘ','ㅙ','ㅚ','ㅛ','ㅜ','ㅝ','ㅞ','ㅟ','ㅠ','ㅡ','ㅢ','ㅣ'];
+function hangulSyllable(cons,vow){
+  const i=HANGUL_INITIALS.indexOf(cons), m=HANGUL_MEDIALS.indexOf(vow);
+  if(i<0||m<0)return cons+vow;
+  return String.fromCharCode(0xAC00+i*588+m*28);
+}
+/* Revised Romanization, initial/medial jamo (index-aligned with HANGUL_INITIALS/MEDIALS) */
+const ROM_INITIAL=['g','kk','n','d','tt','r','m','b','pp','s','ss','','j','jj','ch','k','t','p','h'];
+const ROM_MEDIAL=['a','ae','ya','yae','eo','e','yeo','ye','o','wa','wae','oe','yo','u','wo','we','wi','yu','eu','ui','i'];
+function romanizeSyllable(cons,vow){
+  const i=HANGUL_INITIALS.indexOf(cons), m=HANGUL_MEDIALS.indexOf(vow);
+  if(i<0||m<0)return '';
+  return ROM_INITIAL[i]+ROM_MEDIAL[m];
+}
+
+/* ---------- per-language combo reading ---------- */
+const EN_MEDIAL=['ㅏ','ㅔ','ㅣ','ㅗ','ㅜ'];
+const EN_SOUND={B:'ㅂ',C:'ㅋ',D:'ㄷ',F:'ㅍ',G:'ㄱ',H:'ㅎ',J:'ㅈ',K:'ㅋ',L:'ㄹ',M:'ㅁ',N:'ㄴ',P:'ㅍ',R:'ㄹ',S:'ㅅ',T:'ㅌ',V:'ㅂ',X:'ㅅ',Z:'ㅈ'};
+function enCombo(cons,vIdx){
+  if(cons==='Q')return ['콰','퀘','퀴','쿼','쿠'][vIdx];
+  if(cons==='W')return ['와','웨','위','워','우'][vIdx];
+  if(cons==='Y')return ['야','예','이','요','유'][vIdx];
+  return hangulSyllable(EN_SOUND[cons]||'ㅇ', EN_MEDIAL[vIdx]);
+}
+const EL_MEDIAL=['ㅏ','ㅔ','ㅔ','ㅣ','ㅗ','ㅣ','ㅗ'];
+const EL_SOUND={'β':'ㅂ','γ':'ㄱ','δ':'ㄷ','ζ':'ㅈ','θ':'ㅌ','κ':'ㅋ','λ':'ㄹ','μ':'ㅁ','ν':'ㄴ','π':'ㅍ','ρ':'ㄹ','σ':'ㅅ','τ':'ㅌ','φ':'ㅍ','χ':'ㅎ'};
+function elCombo(cons,vIdx){
+  if(cons==='ξ')return ['크사','크세','크세','크시','크소','크시','크소'][vIdx];
+  if(cons==='ψ')return ['프사','프세','프세','프시','프소','프시','프소'][vIdx];
+  return hangulSyllable(EL_SOUND[cons]||'ㅇ', EL_MEDIAL[vIdx]);
+}
+const HE_MEDIAL=['ㅏ','ㅣ','ㅔ','ㅗ','ㅜ'];
+const HE_SOUND={'א':'ㅇ','ב':'ㅂ','ג':'ㄱ','ד':'ㄷ','ה':'ㅎ','ו':'ㅂ','ז':'ㅈ','ח':'ㅎ','ט':'ㅌ','י':'ㅇ','כ':'ㅋ','ל':'ㄹ','מ':'ㅁ','נ':'ㄴ','ס':'ㅅ','ע':'ㅇ','פ':'ㅍ','צ':'ㅊ','ק':'ㅋ','ר':'ㄹ','ש':'ㅅ','ת':'ㅌ'};
+const HE_OVERRIDE_A={'י':'ㅑ','ש':'ㅑ'};
+function heCombo(cons,vIdx){
+  const medial=(vIdx===0 && HE_OVERRIDE_A[cons])?HE_OVERRIDE_A[cons]:HE_MEDIAL[vIdx];
+  return hangulSyllable(HE_SOUND[cons]||'ㅇ', medial);
+}
+
+/* ---------- Latin transliteration (Greek / Hebrew) ---------- */
+const EL_LATIN_CONS={'β':'b','γ':'g','δ':'d','ζ':'z','θ':'th','κ':'k','λ':'l','μ':'m','ν':'n','ξ':'x','π':'p','ρ':'r','σ':'s','τ':'t','φ':'ph','χ':'ch','ψ':'ps'};
+const EL_LATIN_VOW=['a','e','e','i','o','y','o'];
+function elRom(cons,vIdx){ return (EL_LATIN_CONS[cons]||'')+EL_LATIN_VOW[vIdx]; }
+
+const HE_LATIN_CONS={'א':'','ב':'b','ג':'g','ד':'d','ה':'h','ו':'v','ז':'z','ח':'ch','ט':'t','י':'y','כ':'k','ל':'l','מ':'m','נ':'n','ס':'s','ע':'','פ':'p','צ':'ts','ק':'q','ר':'r','ש':'sh','ת':'t'};
+const HE_LATIN_VOW=['a','i','e','o','u'];
+function heRom(cons,vIdx){ return (HE_LATIN_CONS[cons]||'')+HE_LATIN_VOW[vIdx]; }
+
+/* ---------- language basics: alphabets ---------- */
+const ALPHABETS={
+  ko:{dir:'ltr',note:'한글은 왼쪽에서 오른쪽으로 읽어요. 자음 14자 + 모음 10자가 기본이에요.',
+    noteEn:'Hangul reads left to right. It has 14 basic consonants and 10 basic vowels.',
+    vowLabel:'모음',vowLabelEn:'Vowels',comboHint:'· 자음 14 × 모음 10 = 140자',hasRom:true,
+    consonants:[
+      ['ㄱ','기역','giyeok'],['ㄴ','니은','nieun'],['ㄷ','디귿','digeut'],['ㄹ','리을','rieul'],['ㅁ','미음','mieum'],['ㅂ','비읍','bieup'],
+      ['ㅅ','시옷','siot'],['ㅇ','이응','ieung'],['ㅈ','지읒','jieut'],['ㅊ','치읓','chieut'],['ㅋ','키읔','kieuk'],['ㅌ','티읕','tieut'],
+      ['ㅍ','피읖','pieup'],['ㅎ','히읗','hieut'],
+    ],
+    vowels:[
+      ['ㅏ','아','a'],['ㅑ','야','ya'],['ㅓ','어','eo'],['ㅕ','여','yeo'],
+      ['ㅗ','오','o'],['ㅛ','요','yo'],['ㅜ','우','u'],['ㅠ','유','yu'],['ㅡ','으','eu'],['ㅣ','이','i'],
+    ],
+    comboNote:'자음과 모음이 만나면 이렇게 읽어요 — 한글은 초성+중성이 합쳐져 한 글자가 됩니다.',
+    comboNoteEn:'When a consonant meets a vowel, this is how it’s read — Hangul combines an initial consonant and a vowel into one syllable block.',
+    combo:(cCh,vCh)=>({glyph:hangulSyllable(cCh,vCh),rom:romanizeSyllable(cCh,vCh)}),
+  },
+  en:{dir:'ltr',note:'영어 알파벳도 왼쪽에서 오른쪽으로 읽어요. 자음 21자 + 모음 5자, 대문자 26자가 기본이에요.',
+    noteEn:'The English alphabet also reads left to right. It has 21 basic consonants and 5 basic vowels (26 capital letters in total).',
+    vowLabel:'모음',vowLabelEn:'Vowels',comboHint:'· 자음 21 × 모음 5 = 105개',
+    consonants:[
+      ['B','비'],['C','씨'],['D','디'],['F','에프'],['G','지'],['H','에이치'],
+      ['J','제이'],['K','케이'],['L','엘'],['M','엠'],['N','엔'],['P','피'],
+      ['Q','큐'],['R','알'],['S','에스'],['T','티'],['V','브이'],['W','더블유'],
+      ['X','엑스'],['Y','와이'],['Z','지'],
+    ],
+    vowels:[
+      ['A','에이'],['E','이'],['I','아이'],['O','오'],['U','유'],
+    ],
+    comboNote:'자음 뒤에 모음 a·e·i·o·u를 붙이면 이런 소리가 나요.',
+    comboNoteEn:'Add a vowel — a, e, i, o, u — after a consonant to get these sounds.',
+    combo:(cCh,vCh,vIdx)=>({glyph:cCh+vCh.toLowerCase(),reading:enCombo(cCh,vIdx)}),
+  },
+  he:{dir:'rtl',note:'히브리어는 반대로, 오른쪽에서 왼쪽으로 읽어요. 자음 22자가 기본이며, 모음은 자음 위·아래의 점(니쿠드)으로 표시해요.',
+    noteEn:'Hebrew reads right to left, the opposite direction. It has 22 basic consonants; vowels are marked with points (niqqud) above or below a consonant.',
+    vowLabel:'모음 부호(니쿠드)',vowLabelEn:'Vowel points (Niqqud)',comboHint:'· 자음 22 × 모음부호 5 = 110개',hasRom:true,
+    consonants:[
+      ['א','알레프','Aleph'],['ב','베트','Bet'],['ג','기멜','Gimel'],['ד','달레트','Dalet'],['ה','헤','He'],['ו','바브','Vav'],
+      ['ז','자인','Zayin'],['ח','헤트','Het'],['ט','테트','Tet'],['י','요드','Yod'],['כ','카프','Kaf'],['ל','라메드','Lamed'],
+      ['מ','멤','Mem'],['נ','눈','Nun'],['ס','사메크','Samekh'],['ע','아인','Ayin'],['פ','페','Pe'],['צ','차디','Tsadi'],
+      ['ק','코프','Qof'],['ר','레쉬','Resh'],['ש','신','Shin'],['ת','타브','Tav'],
+    ],
+    vowels:[
+      ['ַ','파타흐 (아)','Patach'],['ִ','히릭 (이)','Hiriq'],['ֵ','체레 (에)','Tsere'],['ֹ','홀람 (오)','Holam'],['ֻ','쿠부츠 (우)','Qubuts'],
+    ],
+    vowelDisplayPrefix:'א',
+    comboNote:'히브리어는 점(니쿠드)으로 모음을 표시해요. 자음 아래·위에 점을 붙이면 이렇게 읽습니다.',
+    comboNoteEn:'Hebrew marks vowels with points (niqqud). Adding a point above or below a consonant produces this reading.',
+    combo:(cCh,vCh,vIdx)=>({glyph:cCh+vCh,reading:heCombo(cCh,vIdx),rom:heRom(cCh,vIdx)}),
+  },
+  el:{dir:'ltr',note:'그리스어도 왼쪽에서 오른쪽으로 읽어요. 자음 17자 + 모음 7자, 총 24자가 기본이에요.',
+    noteEn:'Greek also reads left to right. It has 17 basic consonants and 7 basic vowels — 24 letters in total.',
+    vowLabel:'모음',vowLabelEn:'Vowels',comboHint:'· 자음 17 × 모음 7 = 119개',hasRom:true,
+    consonants:[
+      ['β','베타','Beta'],['γ','감마','Gamma'],['δ','델타','Delta'],['ζ','제타','Zeta'],['θ','세타','Theta'],['κ','카파','Kappa'],
+      ['λ','람다','Lambda'],['μ','뮤','Mu'],['ν','뉴','Nu'],['ξ','크시','Xi'],['π','파이','Pi'],['ρ','로','Rho'],
+      ['σ','시그마','Sigma'],['τ','타우','Tau'],['φ','피','Phi'],['χ','키','Chi'],['ψ','프시','Psi'],
+    ],
+    vowels:[
+      ['α','알파','Alpha'],['ε','엡실론','Epsilon'],['η','에타','Eta'],['ι','이오타','Iota'],['ο','오미크론','Omicron'],['υ','웁실론','Upsilon'],['ω','오메가','Omega'],
+    ],
+    comboNote:'자음 뒤에 모음을 붙이면 이런 소리가 나요.',
+    comboNoteEn:'Add a vowel after a consonant to get these sounds.',
+    combo:(cCh,vCh,vIdx)=>({glyph:cCh+vCh,reading:elCombo(cCh,vIdx),rom:elRom(cCh,vIdx)}),
+  },
+};
+
+function langTableHTML(rows,perRow,prefix,showRom){
+  prefix=prefix||'';
+  const chunks=[];
+  for(let i=0;i<rows.length;i+=perRow)chunks.push(rows.slice(i,i+perRow));
+  return chunks.map(chunk=>
+    '<table class="lang-table"><tbody><tr>'+
+      chunk.map(([ch])=>'<td class="lc-ch">'+esc(prefix+ch)+'</td>').join('')+
+    '</tr><tr>'+
+      chunk.map(([,name])=>'<td class="lc-name">'+esc(name)+'</td>').join('')+
+    '</tr>'+
+    (showRom?'<tr>'+chunk.map(([,,rom])=>'<td class="lc-rom">'+esc(rom||'')+'</td>').join('')+'</tr>':'')+
+    '</tbody></table>'
+  ).join('');
+}
+
+function comboMatrixHTML(lang,data){
+  const vowPrefix=data.vowelDisplayPrefix||'';
+  let html='<thead><tr><th></th>'+
+    data.vowels.map(([ch])=>'<th>'+esc(vowPrefix+ch)+'</th>').join('')+
+    '</tr></thead><tbody>';
+  data.consonants.forEach(([cCh,cName])=>{
+    html+='<tr><th title="'+esc(cName)+'">'+esc(cCh)+'</th>';
+    data.vowels.forEach(([vCh],vIdx)=>{
+      const r=data.combo(cCh,vCh,vIdx);
+      html+='<td><div class="mx-ch">'+esc(r.glyph)+'</div>'+
+        (r.reading?'<div class="mx-name">'+esc(r.reading)+'</div>':'')+
+        (r.rom?'<div class="mx-name rom">'+esc(r.rom)+'</div>':'')+
+        '</td>';
+    });
+    html+='</tr>';
+  });
+  html+='</tbody>';
+  return html;
+}
+
+function setLangTab(lang){
+  const data=ALPHABETS[lang];if(!data)return;
+  document.querySelectorAll('.lang-tab').forEach(b=>b.classList.toggle('on',b.dataset.lang===lang));
+  $('#langNote').innerHTML=esc(data.note)+(data.noteEn?'<span class="en-sub">'+esc(data.noteEn)+'</span>':'');
+  $('#langVowHead').innerHTML=esc(data.vowLabel||'모음')+' <span class="en-label">'+esc(data.vowLabelEn||'Vowels')+'</span>';
+  $('#langComboHint').textContent=data.comboHint||'';
+
+  const showRom=!!data.hasRom;
+  const consGrid=$('#langConsGrid');consGrid.style.direction=data.dir;
+  consGrid.innerHTML=langTableHTML(data.consonants,6,'',showRom);
+
+  const vowGrid=$('#langVowGrid');vowGrid.style.direction=data.dir;
+  vowGrid.innerHTML=langTableHTML(data.vowels,6,data.vowelDisplayPrefix||'',showRom);
+
+  $('#langComboNote').innerHTML=esc(data.comboNote)+(data.comboNoteEn?'<span class="en-sub">'+esc(data.comboNoteEn)+'</span>':'');
+  const mat=$('#langComboMatrix');
+  mat.dir=data.dir;
+  mat.innerHTML=comboMatrixHTML(lang,data);
+}
+
+setLangTab('ko');
+</script>
+</body>
+</html>
