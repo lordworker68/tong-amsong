@@ -1,6 +1,22 @@
 {
- "updated": "2026-07-25T18:30:02+00:00",
+ "updated": "2026-07-26T18:30:02+00:00",
  "videos": [
+  {
+   "id": "MonrjoCQz_Q",
+   "title": "Proverbs 1:2 (KJV) - Sing & Memorize Scripture",
+   "url": "https://www.youtube.com/watch?v=MonrjoCQz_Q",
+   "thumb": "https://i2.ytimg.com/vi/MonrjoCQz_Q/hqdefault.jpg",
+   "published": "2026-07-25T22:12:53+00:00",
+   "is_short": false
+  },
+  {
+   "id": "qd9neYRoj-Q",
+   "title": "Proverbs 1:1 (KJV) - Sing & Memorize Scripture",
+   "url": "https://www.youtube.com/watch?v=qd9neYRoj-Q",
+   "thumb": "https://i2.ytimg.com/vi/qd9neYRoj-Q/hqdefault.jpg",
+   "published": "2026-07-25T22:01:37+00:00",
+   "is_short": false
+  },
   {
    "id": "8n0LTX_xXG0",
    "title": "잠언 1:6 · 히브리어로 노래하며 암송해요 (통암송 쇼츠)",
@@ -104,22 +120,6 @@
    "thumb": "https://i3.ytimg.com/vi/zwGYqEPhk8o/hqdefault.jpg",
    "published": "2026-07-19T13:49:44+00:00",
    "is_short": true
-  },
-  {
-   "id": "l9SeuC0mEbY",
-   "title": "잠언 1:1~6 통암송 · 한국어 버전 | 노래로 암송하는 성경말씀",
-   "url": "https://www.youtube.com/watch?v=l9SeuC0mEbY",
-   "thumb": "https://i1.ytimg.com/vi/l9SeuC0mEbY/hqdefault.jpg",
-   "published": "2026-07-18T06:25:29+00:00",
-   "is_short": false
-  },
-  {
-   "id": "jm4fFh8PaYE",
-   "title": "잠언 1:1~6 3중언어 통암송 | 히브리어·영어·한국어로 암송하는 성경말씀",
-   "url": "https://www.youtube.com/watch?v=jm4fFh8PaYE",
-   "thumb": "https://i3.ytimg.com/vi/jm4fFh8PaYE/hqdefault.jpg",
-   "published": "2026-07-18T03:24:42+00:00",
-   "is_short": false
   }
  ]
 }
