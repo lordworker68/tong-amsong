@@ -1,6 +1,22 @@
 {
- "updated": "2026-08-01T18:30:02+00:00",
+ "updated": "2026-08-02T18:30:01+00:00",
  "videos": [
+  {
+   "id": "D_Wc3dtdwqY",
+   "title": "심비에 새기는 잠언 6 | Proverbs 1:6 (Korean) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=D_Wc3dtdwqY",
+   "thumb": "https://i1.ytimg.com/vi/D_Wc3dtdwqY/hqdefault.jpg",
+   "published": "2026-08-01T23:55:09+00:00",
+   "is_short": true
+  },
+  {
+   "id": "HuO5MbWJpB8",
+   "title": "심비에 새기는 잠언 5 | Proverbs 1:5 (Korean) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=HuO5MbWJpB8",
+   "thumb": "https://i1.ytimg.com/vi/HuO5MbWJpB8/hqdefault.jpg",
+   "published": "2026-08-01T23:45:26+00:00",
+   "is_short": true
+  },
   {
    "id": "ukTwqZUaKgU",
    "title": "세 겹줄 잠언 6 | Proverbs 1:6 (Hebrew·English·Korean) 통암송 #Shorts",
@@ -104,22 +120,6 @@
    "thumb": "https://i4.ytimg.com/vi/kfmdGrfbgEQ/hqdefault.jpg",
    "published": "2026-07-27T14:59:22+00:00",
    "is_short": false
-  },
-  {
-   "id": "Ui2YhkfI4G8",
-   "title": "말씀의 선율 잠언 6 | Proverbs 1:6 (KJV/English) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=Ui2YhkfI4G8",
-   "thumb": "https://i2.ytimg.com/vi/Ui2YhkfI4G8/hqdefault.jpg",
-   "published": "2026-07-27T13:58:45+00:00",
-   "is_short": true
-  },
-  {
-   "id": "pXXVE6cRZfU",
-   "title": "말씀의 선율 잠언 5 | Proverbs 1:5 (KJV/English) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=pXXVE6cRZfU",
-   "thumb": "https://i1.ytimg.com/vi/pXXVE6cRZfU/hqdefault.jpg",
-   "published": "2026-07-27T13:46:49+00:00",
-   "is_short": true
   }
  ]
 }
