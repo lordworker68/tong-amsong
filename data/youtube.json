@@ -1,6 +1,22 @@
 {
- "updated": "2026-08-02T18:30:01+00:00",
+ "updated": "2026-08-03T18:30:01+00:00",
  "videos": [
+  {
+   "id": "GAizcqIABcU",
+   "title": "세 겹줄 잠언 | Proverbs 1:13-19 (English·Korean·Hebrew) 통암송 — 생명의 길",
+   "url": "https://www.youtube.com/watch?v=GAizcqIABcU",
+   "thumb": "https://i4.ytimg.com/vi/GAizcqIABcU/hqdefault.jpg",
+   "published": "2026-08-03T15:15:10+00:00",
+   "is_short": false
+  },
+  {
+   "id": "X0WYvftiBys",
+   "title": "세 겹줄 잠언 | Proverbs 1:7-12 (English·Korean·Hebrew) 통암송 — 지혜의 관",
+   "url": "https://www.youtube.com/watch?v=X0WYvftiBys",
+   "thumb": "https://i1.ytimg.com/vi/X0WYvftiBys/hqdefault.jpg",
+   "published": "2026-08-03T14:45:16+00:00",
+   "is_short": false
+  },
   {
    "id": "D_Wc3dtdwqY",
    "title": "심비에 새기는 잠언 6 | Proverbs 1:6 (Korean) 통암송 #Shorts",
@@ -104,22 +120,6 @@
    "thumb": "https://i3.ytimg.com/vi/FyEJkdrPun0/hqdefault.jpg",
    "published": "2026-07-27T19:30:07+00:00",
    "is_short": true
-  },
-  {
-   "id": "klORzZcH4zI",
-   "title": "심비에 새기는 잠언 | Proverbs 1:1-6 (Korean) 통암송",
-   "url": "https://www.youtube.com/watch?v=klORzZcH4zI",
-   "thumb": "https://i4.ytimg.com/vi/klORzZcH4zI/hqdefault.jpg",
-   "published": "2026-07-27T19:00:13+00:00",
-   "is_short": false
-  },
-  {
-   "id": "kfmdGrfbgEQ",
-   "title": "말씀의 선율 잠언 | Proverbs 1:1-6 (KJV/English) 통암송",
-   "url": "https://www.youtube.com/watch?v=kfmdGrfbgEQ",
-   "thumb": "https://i4.ytimg.com/vi/kfmdGrfbgEQ/hqdefault.jpg",
-   "published": "2026-07-27T14:59:22+00:00",
-   "is_short": false
   }
  ]
 }
