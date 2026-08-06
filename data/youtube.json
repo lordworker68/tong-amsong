@@ -1,6 +1,22 @@
 {
- "updated": "2026-08-04T18:30:01+00:00",
+ "updated": "2026-08-05T18:30:01+00:00",
  "videos": [
+  {
+   "id": "e1GRbu6noTk",
+   "title": "잠언 1:10 | 악한 자가 너를 꾈지라도 따르지 말라 👑 노래로 암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=e1GRbu6noTk",
+   "thumb": "https://i2.ytimg.com/vi/e1GRbu6noTk/hqdefault.jpg",
+   "published": "2026-08-04T20:15:06+00:00",
+   "is_short": true
+  },
+  {
+   "id": "Pa0E3gSnOB4",
+   "title": "잠언 1:9 | 이는 네 머리의 아름다운 관이요 👑 노래로 암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=Pa0E3gSnOB4",
+   "thumb": "https://i1.ytimg.com/vi/Pa0E3gSnOB4/hqdefault.jpg",
+   "published": "2026-08-04T19:15:29+00:00",
+   "is_short": true
+  },
   {
    "id": "UjYwIPiKgMw",
    "title": "잠언 1:8 | 아비의 훈계를 들으며 어미의 법을 떠나지 말라 👑 노래로 암송 #Shorts",
@@ -104,22 +120,6 @@
    "thumb": "https://i2.ytimg.com/vi/M-hn3-S0vRg/hqdefault.jpg",
    "published": "2026-07-28T19:25:25+00:00",
    "is_short": true
-  },
-  {
-   "id": "8E-8OlC_CW8",
-   "title": "심비에 새기는 잠언 3 | Proverbs 1:3 (Korean) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=8E-8OlC_CW8",
-   "thumb": "https://i1.ytimg.com/vi/8E-8OlC_CW8/hqdefault.jpg",
-   "published": "2026-07-28T19:15:10+00:00",
-   "is_short": true
-  },
-  {
-   "id": "L_4W_7At53c",
-   "title": "세 겹줄 잠언 | Proverbs 1:1-6 (Hebrew·English·Korean) 통암송",
-   "url": "https://www.youtube.com/watch?v=L_4W_7At53c",
-   "thumb": "https://i1.ytimg.com/vi/L_4W_7At53c/hqdefault.jpg",
-   "published": "2026-07-28T14:15:00+00:00",
-   "is_short": false
   }
  ]
 }
