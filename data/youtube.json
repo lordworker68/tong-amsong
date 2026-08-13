@@ -1,6 +1,14 @@
 {
- "updated": "2026-08-11T18:30:02+00:00",
+ "updated": "2026-08-12T18:30:01+00:00",
  "videos": [
+  {
+   "id": "En-vpyQUKdg",
+   "title": "말씀의 선율 잠언 8 | Proverbs 1:8 (KJV/English) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=En-vpyQUKdg",
+   "thumb": "https://i2.ytimg.com/vi/En-vpyQUKdg/hqdefault.jpg",
+   "published": "2026-08-11T23:15:22+00:00",
+   "is_short": true
+  },
   {
    "id": "JlD_GU7BsMM",
    "title": "말씀의 선율 잠언 | Proverbs 1:7-19 (KJV/English) 통암송",
@@ -112,14 +120,6 @@
    "thumb": "https://i1.ytimg.com/vi/4M6n8OzMZUM/hqdefault.jpg",
    "published": "2026-08-03T19:15:11+00:00",
    "is_short": true
-  },
-  {
-   "id": "GAizcqIABcU",
-   "title": "세 겹줄 잠언 | Proverbs 1:13-19 (English·Korean·Hebrew) 통암송 — 생명의 길",
-   "url": "https://www.youtube.com/watch?v=GAizcqIABcU",
-   "thumb": "https://i4.ytimg.com/vi/GAizcqIABcU/hqdefault.jpg",
-   "published": "2026-08-03T15:15:10+00:00",
-   "is_short": false
   }
  ]
 }
