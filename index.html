@@ -33,13 +33,26 @@
   .wrap{max-width:760px;margin:0 auto;padding:0 18px;position:relative;z-index:1}
 
   /* Header / Hero */
-  /* 히어로 배경 이미지 — 원본이 정사각형 사진이라 잘리지 않고 전체가 보이도록 contain으로 표시하고,
-     양옆 여백은 같은 사진을 흐리게 확대한 레이어로 채워 빈 여백처럼 보이지 않게 한다 */
+  /* 히어로 배경 — 솔로몬 성전·예루살렘·잠언 4장면 크로스페이드 슬라이드쇼 */
   .hero-bgimg{position:absolute;top:0;left:0;right:0;height:360px;overflow:hidden;z-index:-2;background:#1a1508}
-  .hero-bgimg-blur{position:absolute;inset:-24px;background-image:url("/media/images/hero-banner.jpg");
-    background-size:cover;background-position:center 32%;filter:blur(26px) brightness(.55) saturate(1.15);transform:scale(1.12)}
-  .hero-bgimg-fg,.hero-bgimg-fg img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block;position:relative}
-  .hero-bgimg::after{content:"";position:absolute;inset:0;
+  /* 블러 레이어 */
+  .hero-slide-blur{position:absolute;inset:-24px;background-size:cover;background-position:center 40%;
+    filter:blur(26px) brightness(.5) saturate(1.2);transform:scale(1.12);opacity:0;animation:heroFade 28s infinite}
+  .hero-slide-blur:nth-child(1){background-image:url("/media/images/hero-solomon-temple-dawn.jpg");animation-delay:0s}
+  .hero-slide-blur:nth-child(2){background-image:url("/media/images/hero-jerusalem-morning.jpg");animation-delay:7s}
+  .hero-slide-blur:nth-child(3){background-image:url("/media/images/hero-temple-interior.jpg");animation-delay:14s}
+  .hero-slide-blur:nth-child(4){background-image:url("/media/images/hero-proverbs-scrolls.jpg");animation-delay:21s}
+  /* 포그라운드 레이어 */
+  .hero-slide-fg{position:absolute;inset:0;opacity:0;animation:heroFade 28s infinite}
+  .hero-slide-fg:nth-child(5){animation-delay:0s}
+  .hero-slide-fg:nth-child(6){animation-delay:7s}
+  .hero-slide-fg:nth-child(7){animation-delay:14s}
+  .hero-slide-fg:nth-child(8){animation-delay:21s}
+  .hero-slide-fg img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block}
+  @keyframes heroFade{
+    0%{opacity:0} 7%{opacity:1} 25%{opacity:1} 32%{opacity:0} 100%{opacity:0}
+  }
+  .hero-bgimg::after{content:"";position:absolute;inset:0;z-index:1;
     background:linear-gradient(180deg,rgba(12,9,3,.15) 0%,rgba(12,9,3,.05) 30%,transparent 55%,transparent 76%,var(--paper) 97%)}
   @media(min-width:600px){
     .hero-bgimg{max-width:760px;left:50%;transform:translateX(-50%);height:400px}
@@ -372,11 +385,14 @@
 
 <header class="hero">
   <div class="hero-bgimg" aria-hidden="true">
-    <div class="hero-bgimg-blur"></div>
-    <picture class="hero-bgimg-fg">
-      <source srcset="/media/images/hero-banner.webp" type="image/webp">
-      <img src="/media/images/hero-banner.jpg" alt="세대와 열방을 넘어 함께 말씀을 암송하는 사람들 — 모세의 돌판에서 오늘의 성경으로 이어지는 생명의 말씀" width="1400" height="1400">
-    </picture>
+    <div class="hero-slide-blur"></div>
+    <div class="hero-slide-blur"></div>
+    <div class="hero-slide-blur"></div>
+    <div class="hero-slide-blur"></div>
+    <div class="hero-slide-fg"><img src="/media/images/hero-solomon-temple-dawn.jpg" alt="솔로몬 성전 일출" width="1400" height="1400" loading="eager"></div>
+    <div class="hero-slide-fg"><img src="/media/images/hero-jerusalem-morning.jpg" alt="예루살렘 성전산 새벽" width="1400" height="1400" loading="lazy"></div>
+    <div class="hero-slide-fg"><img src="/media/images/hero-temple-interior.jpg" alt="성전 내부 황금 촛대" width="1400" height="1400" loading="lazy"></div>
+    <div class="hero-slide-fg"><img src="/media/images/hero-proverbs-scrolls.jpg" alt="잠언 두루마리 서실" width="1400" height="1400" loading="lazy"></div>
   </div>
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-particles" id="particles" aria-hidden="true"></div>
