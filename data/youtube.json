@@ -1,6 +1,14 @@
 {
- "updated": "2026-08-23T18:30:01+00:00",
+ "updated": "2026-08-24T18:30:01+00:00",
  "videos": [
+  {
+   "id": "F0NesIejUbg",
+   "title": "심비에 새기는 잠언 19 | Proverbs 1:19 (Korean) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=F0NesIejUbg",
+   "thumb": "https://i3.ytimg.com/vi/F0NesIejUbg/hqdefault.jpg",
+   "published": "2026-08-23T19:15:11+00:00",
+   "is_short": true
+  },
   {
    "id": "ZesOBro7xiQ",
    "title": "심비에 새기는 잠언 18 | Proverbs 1:18 (Korean) 통암송 #Shorts",
@@ -112,14 +120,6 @@
    "thumb": "https://i2.ytimg.com/vi/yM4l-ukjaDU/hqdefault.jpg",
    "published": "2026-08-16T13:54:34+00:00",
    "is_short": false
-  },
-  {
-   "id": "9mijZcde_t8",
-   "title": "말씀의 선율 잠언 19 | Proverbs 1:19 (KJV/English) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=9mijZcde_t8",
-   "thumb": "https://i2.ytimg.com/vi/9mijZcde_t8/hqdefault.jpg",
-   "published": "2026-08-16T13:49:43+00:00",
-   "is_short": true
   }
  ]
 }
