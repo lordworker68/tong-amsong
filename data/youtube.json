@@ -1,6 +1,30 @@
 {
- "updated": "2026-09-03T18:30:01+00:00",
+ "updated": "2026-09-04T18:30:02+00:00",
  "videos": [
+  {
+   "id": "JnDEAwCD748",
+   "title": "첫소리 잠언 23 | Proverbs 1:23 (Hebrew) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=JnDEAwCD748",
+   "thumb": "https://i3.ytimg.com/vi/JnDEAwCD748/hqdefault.jpg",
+   "published": "2026-09-04T07:15:11+00:00",
+   "is_short": true
+  },
+  {
+   "id": "2APqehIC1sE",
+   "title": "말씀의 선율 잠언 23 | Proverbs 1:23 (KJV/English) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=2APqehIC1sE",
+   "thumb": "https://i3.ytimg.com/vi/2APqehIC1sE/hqdefault.jpg",
+   "published": "2026-09-04T01:15:12+00:00",
+   "is_short": true
+  },
+  {
+   "id": "_HSvJYe9hUU",
+   "title": "심비에 새기는 잠언 23 | Proverbs 1:23 (Korean) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=_HSvJYe9hUU",
+   "thumb": "https://i4.ytimg.com/vi/_HSvJYe9hUU/hqdefault.jpg",
+   "published": "2026-09-03T19:15:06+00:00",
+   "is_short": true
+  },
   {
    "id": "SKHBcp4oqfs",
    "title": "첫소리 잠언 22 | Proverbs 1:22 (Hebrew) 통암송 #Shorts",
@@ -95,30 +119,6 @@
    "url": "https://www.youtube.com/watch?v=bj7EhJ6Dx8U",
    "thumb": "https://i3.ytimg.com/vi/bj7EhJ6Dx8U/hqdefault.jpg",
    "published": "2026-08-30T19:15:11+00:00",
-   "is_short": true
-  },
-  {
-   "id": "ZnJmTpz6zsk",
-   "title": "세 겹줄 잠언 18 | Proverbs 1:18 (English·Korean·Hebrew) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=ZnJmTpz6zsk",
-   "thumb": "https://i3.ytimg.com/vi/ZnJmTpz6zsk/hqdefault.jpg",
-   "published": "2026-08-30T07:15:30+00:00",
-   "is_short": true
-  },
-  {
-   "id": "MHoXkQXackA",
-   "title": "첫소리 잠언 17 | Proverbs 1:17 (Hebrew) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=MHoXkQXackA",
-   "thumb": "https://i2.ytimg.com/vi/MHoXkQXackA/hqdefault.jpg",
-   "published": "2026-08-29T19:25:30+00:00",
-   "is_short": true
-  },
-  {
-   "id": "vrWq5THM-G0",
-   "title": "세 겹줄 잠언 17 | Proverbs 1:17 (English·Korean·Hebrew) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=vrWq5THM-G0",
-   "thumb": "https://i3.ytimg.com/vi/vrWq5THM-G0/hqdefault.jpg",
-   "published": "2026-08-29T19:15:31+00:00",
    "is_short": true
   }
  ]
