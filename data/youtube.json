@@ -1,6 +1,30 @@
 {
- "updated": "2026-09-08T18:30:02+00:00",
+ "updated": "2026-09-09T18:30:01+00:00",
  "videos": [
+  {
+   "id": "Mso_JseN9dc",
+   "title": "첫소리 잠언 28 | Proverbs 1:28 (Hebrew) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=Mso_JseN9dc",
+   "thumb": "https://i2.ytimg.com/vi/Mso_JseN9dc/hqdefault.jpg",
+   "published": "2026-09-09T07:15:38+00:00",
+   "is_short": true
+  },
+  {
+   "id": "DCFnW6ezfcY",
+   "title": "말씀의 선율 잠언 28 | Proverbs 1:28 (KJV/English) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=DCFnW6ezfcY",
+   "thumb": "https://i1.ytimg.com/vi/DCFnW6ezfcY/hqdefault.jpg",
+   "published": "2026-09-09T01:15:23+00:00",
+   "is_short": true
+  },
+  {
+   "id": "do32R1H7TIU",
+   "title": "심비에 새기는 잠언 28 | Proverbs 1:28 (Korean) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=do32R1H7TIU",
+   "thumb": "https://i1.ytimg.com/vi/do32R1H7TIU/hqdefault.jpg",
+   "published": "2026-09-08T19:15:25+00:00",
+   "is_short": true
+  },
   {
    "id": "KlCoKORYX3g",
    "title": "첫소리 잠언 27 | Proverbs 1:27 (Hebrew) 통암송 #Shorts",
@@ -95,30 +119,6 @@
    "url": "https://www.youtube.com/watch?v=Hn0k6GF7huw",
    "thumb": "https://i1.ytimg.com/vi/Hn0k6GF7huw/hqdefault.jpg",
    "published": "2026-09-04T19:15:04+00:00",
-   "is_short": true
-  },
-  {
-   "id": "JnDEAwCD748",
-   "title": "첫소리 잠언 23 | Proverbs 1:23 (Hebrew) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=JnDEAwCD748",
-   "thumb": "https://i3.ytimg.com/vi/JnDEAwCD748/hqdefault.jpg",
-   "published": "2026-09-04T07:15:11+00:00",
-   "is_short": true
-  },
-  {
-   "id": "2APqehIC1sE",
-   "title": "말씀의 선율 잠언 23 | Proverbs 1:23 (KJV/English) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=2APqehIC1sE",
-   "thumb": "https://i3.ytimg.com/vi/2APqehIC1sE/hqdefault.jpg",
-   "published": "2026-09-04T01:15:12+00:00",
-   "is_short": true
-  },
-  {
-   "id": "_HSvJYe9hUU",
-   "title": "심비에 새기는 잠언 23 | Proverbs 1:23 (Korean) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=_HSvJYe9hUU",
-   "thumb": "https://i4.ytimg.com/vi/_HSvJYe9hUU/hqdefault.jpg",
-   "published": "2026-09-03T19:15:06+00:00",
    "is_short": true
   }
  ]
