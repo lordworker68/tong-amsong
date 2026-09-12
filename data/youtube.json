@@ -1,6 +1,30 @@
 {
- "updated": "2026-09-10T18:30:01+00:00",
+ "updated": "2026-09-11T18:30:01+00:00",
  "videos": [
+  {
+   "id": "69kRTUOeihw",
+   "title": "첫소리 잠언 30 | Proverbs 1:30 (Hebrew) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=69kRTUOeihw",
+   "thumb": "https://i3.ytimg.com/vi/69kRTUOeihw/hqdefault.jpg",
+   "published": "2026-09-11T07:15:18+00:00",
+   "is_short": true
+  },
+  {
+   "id": "4fSOgeLnGgM",
+   "title": "말씀의 선율 잠언 30 | Proverbs 1:30 (KJV/English) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=4fSOgeLnGgM",
+   "thumb": "https://i1.ytimg.com/vi/4fSOgeLnGgM/hqdefault.jpg",
+   "published": "2026-09-11T01:15:11+00:00",
+   "is_short": true
+  },
+  {
+   "id": "HhGSV8cxt9o",
+   "title": "심비에 새기는 잠언 30 | Proverbs 1:30 (Korean) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=HhGSV8cxt9o",
+   "thumb": "https://i1.ytimg.com/vi/HhGSV8cxt9o/hqdefault.jpg",
+   "published": "2026-09-10T19:15:38+00:00",
+   "is_short": true
+  },
   {
    "id": "dy8XFUp0sks",
    "title": "첫소리 잠언 29 | Proverbs 1:29 (Hebrew) 통암송 #Shorts",
@@ -95,30 +119,6 @@
    "url": "https://www.youtube.com/watch?v=6a9Pv-k8ilA",
    "thumb": "https://i3.ytimg.com/vi/6a9Pv-k8ilA/hqdefault.jpg",
    "published": "2026-09-06T19:15:06+00:00",
-   "is_short": true
-  },
-  {
-   "id": "xEWGUaFPHjQ",
-   "title": "첫소리 잠언 25 | Proverbs 1:25 (Hebrew) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=xEWGUaFPHjQ",
-   "thumb": "https://i1.ytimg.com/vi/xEWGUaFPHjQ/hqdefault.jpg",
-   "published": "2026-09-06T07:15:30+00:00",
-   "is_short": true
-  },
-  {
-   "id": "KH5slk63Zg4",
-   "title": "말씀의 선율 잠언 25 | Proverbs 1:25 (KJV/English) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=KH5slk63Zg4",
-   "thumb": "https://i4.ytimg.com/vi/KH5slk63Zg4/hqdefault.jpg",
-   "published": "2026-09-06T01:15:07+00:00",
-   "is_short": true
-  },
-  {
-   "id": "3Fv2_58zHF4",
-   "title": "심비에 새기는 잠언 25 | Proverbs 1:25 (Korean) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=3Fv2_58zHF4",
-   "thumb": "https://i4.ytimg.com/vi/3Fv2_58zHF4/hqdefault.jpg",
-   "published": "2026-09-05T19:15:08+00:00",
    "is_short": true
   }
  ]
