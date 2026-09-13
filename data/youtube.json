@@ -1,6 +1,30 @@
 {
- "updated": "2026-09-11T18:30:01+00:00",
+ "updated": "2026-09-12T18:30:02+00:00",
  "videos": [
+  {
+   "id": "PnLPtLfFCdI",
+   "title": "첫소리 잠언 31 | Proverbs 1:31 (Hebrew) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=PnLPtLfFCdI",
+   "thumb": "https://i1.ytimg.com/vi/PnLPtLfFCdI/hqdefault.jpg",
+   "published": "2026-09-12T07:15:31+00:00",
+   "is_short": true
+  },
+  {
+   "id": "rsiaP7vy0M4",
+   "title": "말씀의 선율 잠언 31 | Proverbs 1:31 (KJV/English) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=rsiaP7vy0M4",
+   "thumb": "https://i3.ytimg.com/vi/rsiaP7vy0M4/hqdefault.jpg",
+   "published": "2026-09-12T01:15:16+00:00",
+   "is_short": true
+  },
+  {
+   "id": "iglWVP9042E",
+   "title": "심비에 새기는 잠언 31 | Proverbs 1:31 (Korean) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=iglWVP9042E",
+   "thumb": "https://i2.ytimg.com/vi/iglWVP9042E/hqdefault.jpg",
+   "published": "2026-09-11T19:15:10+00:00",
+   "is_short": true
+  },
   {
    "id": "69kRTUOeihw",
    "title": "첫소리 잠언 30 | Proverbs 1:30 (Hebrew) 통암송 #Shorts",
@@ -95,30 +119,6 @@
    "url": "https://www.youtube.com/watch?v=IRz56itP_Zw",
    "thumb": "https://i2.ytimg.com/vi/IRz56itP_Zw/hqdefault.jpg",
    "published": "2026-09-07T19:15:27+00:00",
-   "is_short": true
-  },
-  {
-   "id": "BTzXikYBU7o",
-   "title": "첫소리 잠언 26 | Proverbs 1:26 (Hebrew) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=BTzXikYBU7o",
-   "thumb": "https://i3.ytimg.com/vi/BTzXikYBU7o/hqdefault.jpg",
-   "published": "2026-09-07T07:15:12+00:00",
-   "is_short": true
-  },
-  {
-   "id": "HGEDaoQl0_g",
-   "title": "말씀의 선율 잠언 26 | Proverbs 1:26 (KJV/English) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=HGEDaoQl0_g",
-   "thumb": "https://i1.ytimg.com/vi/HGEDaoQl0_g/hqdefault.jpg",
-   "published": "2026-09-07T01:15:32+00:00",
-   "is_short": true
-  },
-  {
-   "id": "6a9Pv-k8ilA",
-   "title": "심비에 새기는 잠언 26 | Proverbs 1:26 (Korean) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=6a9Pv-k8ilA",
-   "thumb": "https://i3.ytimg.com/vi/6a9Pv-k8ilA/hqdefault.jpg",
-   "published": "2026-09-06T19:15:06+00:00",
    "is_short": true
   }
  ]
