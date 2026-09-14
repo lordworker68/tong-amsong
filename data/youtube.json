@@ -1,9 +1,41 @@
 {
- "updated": "2026-09-12T18:30:02+00:00",
+ "updated": "2026-09-13T18:30:02+00:00",
  "videos": [
   {
+   "id": "MBJoLgOAVCY",
+   "title": "말씀이 당신을 부릅니다 | 잠언 1:1~6 QR 홍보 | 통암송 WiaCode",
+   "url": "https://www.youtube.com/watch?v=MBJoLgOAVCY",
+   "thumb": "https://i2.ytimg.com/vi/MBJoLgOAVCY/hqdefault.jpg",
+   "published": "2026-09-13T13:45:35+00:00",
+   "is_short": false
+  },
+  {
+   "id": "x3PHw9bn7AI",
+   "title": "잠언 1:32 히브리어 성경암송 | 첫소리 잠언 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=x3PHw9bn7AI",
+   "thumb": "https://i1.ytimg.com/vi/x3PHw9bn7AI/hqdefault.jpg",
+   "published": "2026-09-13T07:15:35+00:00",
+   "is_short": true
+  },
+  {
+   "id": "Uzeq0p-CibA",
+   "title": "잠언 1:32 영어 성경암송 | 말씀의 선율 잠언 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=Uzeq0p-CibA",
+   "thumb": "https://i2.ytimg.com/vi/Uzeq0p-CibA/hqdefault.jpg",
+   "published": "2026-09-13T01:15:20+00:00",
+   "is_short": true
+  },
+  {
+   "id": "ewaCU0qpxMU",
+   "title": "잠언 1:32 성경암송 | 심비에 새기는 잠언 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=ewaCU0qpxMU",
+   "thumb": "https://i2.ytimg.com/vi/ewaCU0qpxMU/hqdefault.jpg",
+   "published": "2026-09-12T19:15:39+00:00",
+   "is_short": true
+  },
+  {
    "id": "PnLPtLfFCdI",
-   "title": "첫소리 잠언 31 | Proverbs 1:31 (Hebrew) 통암송 #Shorts",
+   "title": "잠언 1:31 히브리어 성경암송 | 첫소리 잠언 통암송 #Shorts",
    "url": "https://www.youtube.com/watch?v=PnLPtLfFCdI",
    "thumb": "https://i1.ytimg.com/vi/PnLPtLfFCdI/hqdefault.jpg",
    "published": "2026-09-12T07:15:31+00:00",
@@ -11,7 +43,7 @@
   },
   {
    "id": "rsiaP7vy0M4",
-   "title": "말씀의 선율 잠언 31 | Proverbs 1:31 (KJV/English) 통암송 #Shorts",
+   "title": "잠언 1:31 영어 성경암송 | 말씀의 선율 잠언 통암송 #Shorts",
    "url": "https://www.youtube.com/watch?v=rsiaP7vy0M4",
    "thumb": "https://i3.ytimg.com/vi/rsiaP7vy0M4/hqdefault.jpg",
    "published": "2026-09-12T01:15:16+00:00",
@@ -19,7 +51,7 @@
   },
   {
    "id": "iglWVP9042E",
-   "title": "심비에 새기는 잠언 31 | Proverbs 1:31 (Korean) 통암송 #Shorts",
+   "title": "잠언 1:31 성경암송 | 심비에 새기는 잠언 통암송 #Shorts",
    "url": "https://www.youtube.com/watch?v=iglWVP9042E",
    "thumb": "https://i2.ytimg.com/vi/iglWVP9042E/hqdefault.jpg",
    "published": "2026-09-11T19:15:10+00:00",
@@ -27,7 +59,7 @@
   },
   {
    "id": "69kRTUOeihw",
-   "title": "첫소리 잠언 30 | Proverbs 1:30 (Hebrew) 통암송 #Shorts",
+   "title": "잠언 1:30 히브리어 성경암송 | 첫소리 잠언 통암송 #Shorts",
    "url": "https://www.youtube.com/watch?v=69kRTUOeihw",
    "thumb": "https://i3.ytimg.com/vi/69kRTUOeihw/hqdefault.jpg",
    "published": "2026-09-11T07:15:18+00:00",
@@ -35,7 +67,7 @@
   },
   {
    "id": "4fSOgeLnGgM",
-   "title": "말씀의 선율 잠언 30 | Proverbs 1:30 (KJV/English) 통암송 #Shorts",
+   "title": "잠언 1:30 영어 성경암송 | 말씀의 선율 잠언 통암송 #Shorts",
    "url": "https://www.youtube.com/watch?v=4fSOgeLnGgM",
    "thumb": "https://i1.ytimg.com/vi/4fSOgeLnGgM/hqdefault.jpg",
    "published": "2026-09-11T01:15:11+00:00",
@@ -43,7 +75,7 @@
   },
   {
    "id": "HhGSV8cxt9o",
-   "title": "심비에 새기는 잠언 30 | Proverbs 1:30 (Korean) 통암송 #Shorts",
+   "title": "잠언 1:30 성경암송 | 심비에 새기는 잠언 통암송 #Shorts",
    "url": "https://www.youtube.com/watch?v=HhGSV8cxt9o",
    "thumb": "https://i1.ytimg.com/vi/HhGSV8cxt9o/hqdefault.jpg",
    "published": "2026-09-10T19:15:38+00:00",
@@ -51,7 +83,7 @@
   },
   {
    "id": "dy8XFUp0sks",
-   "title": "첫소리 잠언 29 | Proverbs 1:29 (Hebrew) 통암송 #Shorts",
+   "title": "잠언 1:29 히브리어 성경암송 | 첫소리 잠언 통암송 #Shorts",
    "url": "https://www.youtube.com/watch?v=dy8XFUp0sks",
    "thumb": "https://i1.ytimg.com/vi/dy8XFUp0sks/hqdefault.jpg",
    "published": "2026-09-10T07:15:24+00:00",
@@ -59,7 +91,7 @@
   },
   {
    "id": "4ZH83OoXGdc",
-   "title": "말씀의 선율 잠언 29 | Proverbs 1:29 (KJV/English) 통암송 #Shorts",
+   "title": "잠언 1:29 영어 성경암송 | 말씀의 선율 잠언 통암송 #Shorts",
    "url": "https://www.youtube.com/watch?v=4ZH83OoXGdc",
    "thumb": "https://i1.ytimg.com/vi/4ZH83OoXGdc/hqdefault.jpg",
    "published": "2026-09-10T01:15:38+00:00",
@@ -67,7 +99,7 @@
   },
   {
    "id": "49wz19I5PVc",
-   "title": "심비에 새기는 잠언 29 | Proverbs 1:29 (Korean) 통암송 #Shorts",
+   "title": "잠언 1:29 성경암송 | 심비에 새기는 잠언 통암송 #Shorts",
    "url": "https://www.youtube.com/watch?v=49wz19I5PVc",
    "thumb": "https://i1.ytimg.com/vi/49wz19I5PVc/hqdefault.jpg",
    "published": "2026-09-09T19:15:10+00:00",
@@ -75,7 +107,7 @@
   },
   {
    "id": "Mso_JseN9dc",
-   "title": "첫소리 잠언 28 | Proverbs 1:28 (Hebrew) 통암송 #Shorts",
+   "title": "잠언 1:28 히브리어 성경암송 | 첫소리 잠언 통암송 #Shorts",
    "url": "https://www.youtube.com/watch?v=Mso_JseN9dc",
    "thumb": "https://i2.ytimg.com/vi/Mso_JseN9dc/hqdefault.jpg",
    "published": "2026-09-09T07:15:38+00:00",
@@ -83,42 +115,10 @@
   },
   {
    "id": "DCFnW6ezfcY",
-   "title": "말씀의 선율 잠언 28 | Proverbs 1:28 (KJV/English) 통암송 #Shorts",
+   "title": "잠언 1:28 영어 성경암송 | 말씀의 선율 잠언 통암송 #Shorts",
    "url": "https://www.youtube.com/watch?v=DCFnW6ezfcY",
    "thumb": "https://i1.ytimg.com/vi/DCFnW6ezfcY/hqdefault.jpg",
    "published": "2026-09-09T01:15:23+00:00",
-   "is_short": true
-  },
-  {
-   "id": "do32R1H7TIU",
-   "title": "심비에 새기는 잠언 28 | Proverbs 1:28 (Korean) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=do32R1H7TIU",
-   "thumb": "https://i1.ytimg.com/vi/do32R1H7TIU/hqdefault.jpg",
-   "published": "2026-09-08T19:15:25+00:00",
-   "is_short": true
-  },
-  {
-   "id": "KlCoKORYX3g",
-   "title": "첫소리 잠언 27 | Proverbs 1:27 (Hebrew) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=KlCoKORYX3g",
-   "thumb": "https://i4.ytimg.com/vi/KlCoKORYX3g/hqdefault.jpg",
-   "published": "2026-09-08T07:15:25+00:00",
-   "is_short": true
-  },
-  {
-   "id": "1dXCrxsUm5Q",
-   "title": "말씀의 선율 잠언 27 | Proverbs 1:27 (KJV/English) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=1dXCrxsUm5Q",
-   "thumb": "https://i2.ytimg.com/vi/1dXCrxsUm5Q/hqdefault.jpg",
-   "published": "2026-09-08T01:15:00+00:00",
-   "is_short": true
-  },
-  {
-   "id": "IRz56itP_Zw",
-   "title": "심비에 새기는 잠언 27 | Proverbs 1:27 (Korean) 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=IRz56itP_Zw",
-   "thumb": "https://i2.ytimg.com/vi/IRz56itP_Zw/hqdefault.jpg",
-   "published": "2026-09-07T19:15:27+00:00",
    "is_short": true
   }
  ]
