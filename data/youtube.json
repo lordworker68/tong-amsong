@@ -1,6 +1,30 @@
 {
- "updated": "2026-09-13T18:30:02+00:00",
+ "updated": "2026-09-14T18:30:02+00:00",
  "videos": [
+  {
+   "id": "Yh-q1GVf2Zw",
+   "title": "잠언 1:33 히브리어 성경암송 | 첫소리 잠언 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=Yh-q1GVf2Zw",
+   "thumb": "https://i2.ytimg.com/vi/Yh-q1GVf2Zw/hqdefault.jpg",
+   "published": "2026-09-14T07:15:27+00:00",
+   "is_short": true
+  },
+  {
+   "id": "vbwyr9QhZ2Y",
+   "title": "잠언 1:33 영어 성경암송 | 말씀의 선율 잠언 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=vbwyr9QhZ2Y",
+   "thumb": "https://i3.ytimg.com/vi/vbwyr9QhZ2Y/hqdefault.jpg",
+   "published": "2026-09-14T01:15:35+00:00",
+   "is_short": true
+  },
+  {
+   "id": "xwb-zbT9XqA",
+   "title": "잠언 1:33 성경암송 | 심비에 새기는 잠언 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=xwb-zbT9XqA",
+   "thumb": "https://i1.ytimg.com/vi/xwb-zbT9XqA/hqdefault.jpg",
+   "published": "2026-09-13T19:15:21+00:00",
+   "is_short": true
+  },
   {
    "id": "MBJoLgOAVCY",
    "title": "말씀이 당신을 부릅니다 | 잠언 1:1~6 QR 홍보 | 통암송 WiaCode",
@@ -95,30 +119,6 @@
    "url": "https://www.youtube.com/watch?v=4ZH83OoXGdc",
    "thumb": "https://i1.ytimg.com/vi/4ZH83OoXGdc/hqdefault.jpg",
    "published": "2026-09-10T01:15:38+00:00",
-   "is_short": true
-  },
-  {
-   "id": "49wz19I5PVc",
-   "title": "잠언 1:29 성경암송 | 심비에 새기는 잠언 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=49wz19I5PVc",
-   "thumb": "https://i1.ytimg.com/vi/49wz19I5PVc/hqdefault.jpg",
-   "published": "2026-09-09T19:15:10+00:00",
-   "is_short": true
-  },
-  {
-   "id": "Mso_JseN9dc",
-   "title": "잠언 1:28 히브리어 성경암송 | 첫소리 잠언 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=Mso_JseN9dc",
-   "thumb": "https://i2.ytimg.com/vi/Mso_JseN9dc/hqdefault.jpg",
-   "published": "2026-09-09T07:15:38+00:00",
-   "is_short": true
-  },
-  {
-   "id": "DCFnW6ezfcY",
-   "title": "잠언 1:28 영어 성경암송 | 말씀의 선율 잠언 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=DCFnW6ezfcY",
-   "thumb": "https://i1.ytimg.com/vi/DCFnW6ezfcY/hqdefault.jpg",
-   "published": "2026-09-09T01:15:23+00:00",
    "is_short": true
   }
  ]
