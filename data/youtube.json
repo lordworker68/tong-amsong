@@ -1,6 +1,14 @@
 {
- "updated": "2026-09-17T18:30:01+00:00",
+ "updated": "2026-09-18T18:30:01+00:00",
  "videos": [
+  {
+   "id": "0IgFOgwhp-c",
+   "title": "세 겹줄 잠언 15 | Proverbs 1:15 (English·Korean·Hebrew) 통암송 #Shorts",
+   "url": "https://www.youtube.com/watch?v=0IgFOgwhp-c",
+   "thumb": "https://i1.ytimg.com/vi/0IgFOgwhp-c/hqdefault.jpg",
+   "published": "2026-09-17T19:15:24+00:00",
+   "is_short": true
+  },
   {
    "id": "o_usHBYGQ-Q",
    "title": "세 겹줄 잠언 14 | Proverbs 1:14 (English·Korean·Hebrew) 통암송 #Shorts",
@@ -111,14 +119,6 @@
    "url": "https://www.youtube.com/watch?v=69kRTUOeihw",
    "thumb": "https://i3.ytimg.com/vi/69kRTUOeihw/hqdefault.jpg",
    "published": "2026-09-11T07:15:18+00:00",
-   "is_short": true
-  },
-  {
-   "id": "4fSOgeLnGgM",
-   "title": "잠언 1:30 영어 성경암송 | 말씀의 선율 잠언 통암송 #Shorts",
-   "url": "https://www.youtube.com/watch?v=4fSOgeLnGgM",
-   "thumb": "https://i1.ytimg.com/vi/4fSOgeLnGgM/hqdefault.jpg",
-   "published": "2026-09-11T01:15:11+00:00",
    "is_short": true
   }
  ]
