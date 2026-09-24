@@ -290,8 +290,9 @@
   .ch-intro-desc{font-size:13.5px;color:var(--ink);line-height:1.65;margin-bottom:14px}
   .ch-intro-desc b{color:var(--accent)}
   .ch-intro-feats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-  .ch-feat{background:var(--accent-soft);border:1px solid rgba(154,123,51,.18);border-radius:999px;
-    padding:5px 11px;font-size:11.5px;font-weight:600;color:var(--accent-deep)}
+  .ch-feat{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:5px 11px;border-radius:20px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;transition:.15s;white-space:nowrap}
+  .ch-feat:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+  .ch-feat.active{background:var(--accent);color:#fff;border-color:var(--accent)}
   .ch-intro-btns{display:flex;gap:8px;flex-wrap:wrap}
   .ch-sub-btn{display:inline-flex;align-items:center;gap:6px;background:#FF0000;color:#fff;
     border-radius:999px;padding:10px 20px;font-size:13.5px;font-weight:700;text-decoration:none;
@@ -377,11 +378,14 @@
 <body>
 
 <nav class="topnav">
-  <a href="/" onclick="go('lib');return false;">📜 본문</a>
+  <a href="#" onclick="go('lib');return false;">🏠 홈</a>
+  <a href="#" onclick="go('lib');window.scrollTo({top:0,behavior:'smooth'});return false;">📜 본문</a>
   <a href="#proverbs-sec" onclick="goProverbs();return false;">💡 오늘의 잠언</a>
-  <a href="/lang-basics.html">🔤 언어별 발음기초</a>
+  <a href="#journey-sec" onclick="goSection('journey-sec');return false;">🎵 통암송 여정</a>
+  <a href="#channel-sec" onclick="goSection('channel-sec');return false;">📺 유튜브 채널</a>
+  <a href="/lang-basics.html">🔤 발음기초</a>
   <a href="/study.html">📖 원어 묵상</a>
-  <a href="/daily-track.html">📊 날마다 쌓이는 소리</a>
+  <a href="/daily-track.html">📊 쌓이는 소리</a>
 </nav>
 
 <header class="hero">
@@ -465,7 +469,7 @@
     </div>
 
     <!-- JOURNEY -->
-    <div class="section-title" style="margin-top:38px">통암송 여정 <span style="font-weight:400;color:var(--sub);font-size:12px;text-transform:none;letter-spacing:0">· 시편부터 산상수훈까지, 더 깊이</span></div>
+    <div class="section-title" id="journey-sec" style="margin-top:38px">통암송 여정 <span style="font-weight:400;color:var(--sub);font-size:12px;text-transform:none;letter-spacing:0">· 시편부터 산상수훈까지, 더 깊이</span></div>
     <div class="jintro">준비할 것 없이, 정거장을 누르면 말씀이 바로 손에 들어옵니다.<br>주님과 함께 한 절씩 마음에 심으며 걷는 길이에요.</div>
     <div class="jtrans">
       <div class="seg">
@@ -481,7 +485,7 @@
     <button class="add-card" style="margin-top:14px" onclick="openEditor()">＋ 직접 본문 추가 (개역개정 등 붙여넣기)</button>
 
     <!-- CHANNEL INTRO -->
-    <div class="section-title" style="margin-top:38px">통암송 유튜브 채널</div>
+    <div class="section-title" id="channel-sec" style="margin-top:38px">통암송 유튜브 채널</div>
     <div class="ch-intro">
       <div class="ch-intro-head">
         <div class="ch-intro-logo">🎵</div>
@@ -495,16 +499,15 @@
         <span style="color:var(--sub);font-size:12.5px">현재 잠언 1장 전 19절 완성 — 매일 새 말씀이 올라옵니다</span>
       </p>
       <div class="ch-intro-feats">
-        <span class="ch-feat">🇰🇷 한국어 솔로</span>
-        <span class="ch-feat">🔤 영어 KJV</span>
-        <span class="ch-feat">🕎 히브리어 원어</span>
-        <span class="ch-feat">🎶 3중언어 챈트</span>
-        <span class="ch-feat">⚡ 절별 쇼츠</span>
-        <span class="ch-feat">🎬 챕터 롱폼</span>
+        <button class="ch-feat active" data-filter="all" onclick="filterYt(this,'all')">🔄 전체</button>
+        <button class="ch-feat" data-filter="ko" onclick="filterYt(this,'ko')">🇰🇷 한국어</button>
+        <button class="ch-feat" data-filter="en" onclick="filterYt(this,'en')">🔤 영어 KJV</button>
+        <button class="ch-feat" data-filter="he" onclick="filterYt(this,'he')">🕎 히브리어</button>
+        <button class="ch-feat" data-filter="tri" onclick="filterYt(this,'tri')">🎶 세겹줄 챈트</button>
       </div>
       <div class="ch-intro-btns">
-        <a class="ch-sub-btn" href="https://www.youtube.com/@tongamsong?sub_confirmation=1" target="_blank" rel="noopener">▶ 구독하기</a>
-        <a class="ch-view-btn" href="https://www.youtube.com/@tongamsong" target="_blank" rel="noopener">채널 전체 보기 →</a>
+        <a class="ch-sub-btn" href="https://www.youtube.com/channel/UCaNna1M5rWO5FZcKfAX6OCw?sub_confirmation=1" target="_blank" rel="noopener">▶ 구독하기</a>
+        <a class="ch-view-btn" href="https://www.youtube.com/channel/UCaNna1M5rWO5FZcKfAX6OCw" target="_blank" rel="noopener">채널 전체 보기 →</a>
       </div>
     </div>
 
@@ -512,15 +515,15 @@
     <div class="section-title" style="margin-top:4px">미디어 연동</div>
     <div class="jintro">어디서나 통암송과 함께하세요 — 채널에서 소식을 만나보실 수 있어요.</div>
     <div class="media-links">
-      <a href="https://www.youtube.com/@tongamsong" target="_blank" rel="noopener"><div class="mi">▶️</div><b>YouTube</b><span>암송 영상</span></a>
+      <a href="https://www.youtube.com/channel/UCaNna1M5rWO5FZcKfAX6OCw" target="_blank" rel="noopener"><div class="mi">▶️</div><b>YouTube</b><span>뮤직영상</span></a>
       <a href="https://open.spotify.com/show/0BNrpFEwm3BVXTv8EAL4Og" target="_blank" rel="noopener"><div class="mi">🎧</div><b>Spotify</b><span>성경읽는 희석이</span></a>
       <a href="https://www.instagram.com/tongamsong/" target="_blank" rel="noopener"><div class="mi">📸</div><b>Instagram</b><span>@tongamsong</span></a>
       <a href="https://www.facebook.com/profile.php?id=1198606753341879" target="_blank" rel="noopener"><div class="mi">📘</div><b>Facebook</b><span>통암송</span></a>
     </div>
 
     <div class="media-sub">
-      <h3>📺 최신 암송 Song 영상<small>· 유튜브 자동 업데이트</small></h3>
-      <a href="https://www.youtube.com/@tongamsong" target="_blank" rel="noopener">채널 전체 보기 →</a>
+      <h3>📺 최신 뮤직영상<small>· 유튜브 자동 업데이트</small></h3>
+      <a href="https://www.youtube.com/channel/UCaNna1M5rWO5FZcKfAX6OCw" target="_blank" rel="noopener">채널 전체 보기 →</a>
     </div>
     <div class="yt-subhead">🎵 풀영상</div>
     <div class="ytgrid" id="ytGridFull"><div class="media-empty">영상을 불러오는 중…</div></div>
@@ -580,8 +583,8 @@
 
 <footer>
   <div class="v" id="foot-verse"></div>
-  통암송 · ecolab-x.com · 개척교회 디지털 섬김<br>
-  <a href="https://www.youtube.com/@tongamsong" target="_blank" rel="noopener" style="color:var(--sub);text-decoration:underline">YouTube @tongamsong</a>에서 노래로 암송하는 영상도 함께 만나보세요<br>
+  통암송 · lordworker.com · 개척교회 디지털 섬김<br>
+  <a href="https://www.youtube.com/channel/UCaNna1M5rWO5FZcKfAX6OCw" target="_blank" rel="noopener" style="color:var(--sub);text-decoration:underline">YouTube @tongamsong</a>에서 노래로 암송하는 영상도 함께 만나보세요<br>
   본문 API © bolls.life (개역한글·새번역) · 나의 본문은 이용자 기기에만 저장됩니다
 </footer>
 
@@ -684,6 +687,7 @@ function renderPvPicker(){
     el.appendChild(b);
   }
 }
+function goSection(id){go('lib');setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});},60);}
 function goProverbs(){
   go('lib');
   setTimeout(()=>{const el=document.getElementById('proverbs-sec');if(el)el.scrollIntoView({behavior:'smooth'});},60);
@@ -1133,13 +1137,45 @@ function ytCard(x){
     '<div class="yd">'+fmtYMD(x.published)+'</div>'+
   '</a>';
 }
+let allYtVideos=[];
+function renderYtGrids(v){
+  const full=v.filter(x=>!x.is_short),shorts=v.filter(x=>x.is_short);
+  const elF=$('#ytGridFull'),elS=$('#ytGridShorts');
+  elF.innerHTML=full.length?full.map(ytCard).join(''):'<div class="media-empty">풀영상을 준비 중입니다.</div>';
+  elS.innerHTML=shorts.length?shorts.map(ytCard).join(''):'<div class="media-empty">쇼츠를 준비 중입니다.</div>';
+}
+function filterYt(btn,type){
+  document.querySelectorAll('.ch-feat').forEach(b=>{b.classList.toggle('active',b===btn);});
+  let v=allYtVideos;
+  const SHORTS_MAX=8;
+  if(type==='ko'){
+    v=v.filter(x=>x.title.includes('심비에')||(x.lang&&x.lang==='ko'));
+    const longs=v.filter(x=>!x.is_short);
+    const shorts=v.filter(x=>x.is_short).slice(0,SHORTS_MAX);
+    v=[...longs,...shorts];
+  }else if(type==='en'){
+    v=v.filter(x=>x.title.includes('영어')||x.title.includes('말씀의 선율')||(x.lang&&x.lang==='en'));
+    const longs=v.filter(x=>!x.is_short);
+    const shorts=v.filter(x=>x.is_short).slice(0,SHORTS_MAX);
+    v=[...longs,...shorts];
+  }else if(type==='he'){
+    v=v.filter(x=>x.title.includes('히브리어')||x.title.includes('첫소리')||(x.lang&&x.lang==='he'));
+    const longs=v.filter(x=>!x.is_short);
+    const shorts=v.filter(x=>x.is_short).slice(0,SHORTS_MAX);
+    v=[...longs,...shorts];
+  }else if(type==='tri'){
+    v=v.filter(x=>x.title.includes('세 겹줄')||x.title.includes('3중언어')||x.title.includes('English·Korean')||(x.lang&&x.lang==='tri'));
+    const longs=v.filter(x=>!x.is_short);
+    const shorts=v.filter(x=>x.is_short).slice(0,SHORTS_MAX);
+    v=[...longs,...shorts];
+  }
+  renderYtGrids(v);
+  setTimeout(()=>{const el=$('#ytGridFull');if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},60);
+}
 function loadYoutube(){
   fetch('/data/youtube.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
-    const v=(d&&d.videos)||[];
-    const full=v.filter(x=>!x.is_short), shorts=v.filter(x=>x.is_short);
-    const elF=$('#ytGridFull'),elS=$('#ytGridShorts');
-    elF.innerHTML=full.length?full.map(ytCard).join(''):'<div class="media-empty">풀영상을 준비 중입니다.</div>';
-    elS.innerHTML=shorts.length?shorts.map(ytCard).join(''):'<div class="media-empty">쇼츠를 준비 중입니다.</div>';
+    allYtVideos=(d&&d.videos)||[];
+    renderYtGrids(allYtVideos);
   }).catch(()=>{
     const m='<div class="media-empty">유튜브 채널에서 확인해 주세요.</div>';
     const elF=$('#ytGridFull'),elS=$('#ytGridShorts');if(elF)elF.innerHTML=m;if(elS)elS.innerHTML=m;
